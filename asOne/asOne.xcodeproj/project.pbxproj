@@ -111,19 +111,6 @@
 		F1C2340E1B519F9900F79988 = {
 			isa = PBXGroup;
 			children = (
-				D089DA5E1B51C5300016F5E9 /* libsqlite3.dylib */,
-				D089DA5C1B51C5230016F5E9 /* libz.dylib */,
-				D089DA5A1B51C51A0016F5E9 /* SystemConfiguration.framework */,
-				D089DA581B51C50F0016F5E9 /* StoreKit.framework */,
-				D089DA561B51C5080016F5E9 /* Social.framework */,
-				D089DA541B51C5010016F5E9 /* Security.framework */,
-				D089DA521B51C4FA0016F5E9 /* QuartzCore.framework */,
-				D089DA501B51C4BF0016F5E9 /* MobileCoreServices.framework */,
-				D089DA4E1B51C4B60016F5E9 /* CoreLocation.framework */,
-				D089DA4C1B51C4AF0016F5E9 /* CoreGraphics.framework */,
-				D089DA4A1B51C4A80016F5E9 /* CFNetwork.framework */,
-				D089DA481B51C49E0016F5E9 /* AudioToolbox.framework */,
-				D089DA461B51C48B0016F5E9 /* Accounts.framework */,
 				F1C234191B519F9900F79988 /* asOne */,
 				F1C234331B519F9A00F79988 /* asOneTests */,
 				F1C234181B519F9900F79988 /* Products */,
@@ -142,8 +129,6 @@
 		F1C234191B519F9900F79988 /* asOne */ = {
 			isa = PBXGroup;
 			children = (
-				D089DA421B51C46F0016F5E9 /* Bolts.framework */,
-				D089DA431B51C46F0016F5E9 /* Parse.framework */,
 				F1C234471B51C1AD00F79988 /* View */,
 				F1C234491B51C20900F79988 /* Controller */,
 				F1C234481B51C1C000F79988 /* Model */,
@@ -160,6 +145,21 @@
 				F1C2341C1B519F9900F79988 /* main.m */,
 				F1C2341E1B519F9900F79988 /* AppDelegate.h */,
 				F1C2341F1B519F9900F79988 /* AppDelegate.m */,
+				D089DA5E1B51C5300016F5E9 /* libsqlite3.dylib */,
+				D089DA5C1B51C5230016F5E9 /* libz.dylib */,
+				D089DA421B51C46F0016F5E9 /* Bolts.framework */,
+				D089DA431B51C46F0016F5E9 /* Parse.framework */,
+				D089DA5A1B51C51A0016F5E9 /* SystemConfiguration.framework */,
+				D089DA581B51C50F0016F5E9 /* StoreKit.framework */,
+				D089DA561B51C5080016F5E9 /* Social.framework */,
+				D089DA541B51C5010016F5E9 /* Security.framework */,
+				D089DA521B51C4FA0016F5E9 /* QuartzCore.framework */,
+				D089DA501B51C4BF0016F5E9 /* MobileCoreServices.framework */,
+				D089DA4E1B51C4B60016F5E9 /* CoreLocation.framework */,
+				D089DA4C1B51C4AF0016F5E9 /* CoreGraphics.framework */,
+				D089DA4A1B51C4A80016F5E9 /* CFNetwork.framework */,
+				D089DA481B51C49E0016F5E9 /* AudioToolbox.framework */,
+				D089DA461B51C48B0016F5E9 /* Accounts.framework */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

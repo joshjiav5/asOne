@@ -14,6 +14,7 @@
 		F1C234281B519F9900F79988 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C234271B519F9900F79988 /* Images.xcassets */; };
 		F1C2342B1B519F9900F79988 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1C234291B519F9900F79988 /* LaunchScreen.xib */; };
 		F1C234371B519F9A00F79988 /* asOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234361B519F9A00F79988 /* asOneTests.m */; };
+		F1C234421B51A0BC00F79988 /* AODeviceInfoHub.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		F1C234301B519F9A00F79988 /* asOneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = asOneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C234351B519F9A00F79988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1C234361B519F9A00F79988 /* asOneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = asOneTests.m; sourceTree = "<group>"; };
+		F1C234401B51A0BC00F79988 /* AODeviceInfoHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AODeviceInfoHub.h; sourceTree = "<group>"; };
+		F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AODeviceInfoHub.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				F1C234211B519F9900F79988 /* ViewController.h */,
 				F1C234221B519F9900F79988 /* ViewController.m */,
 				F1C234241B519F9900F79988 /* Main.storyboard */,
+				F1C234401B51A0BC00F79988 /* AODeviceInfoHub.h */,
+				F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */,
 				F1C234271B519F9900F79988 /* Images.xcassets */,
 				F1C234291B519F9900F79988 /* LaunchScreen.xib */,
 				F1C2341A1B519F9900F79988 /* Supporting Files */,
@@ -168,6 +173,7 @@
 				TargetAttributes = {
 					F1C234161B519F9900F79988 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = LA98E724VK;
 					};
 					F1C2342F1B519F9A00F79988 = {
 						CreatedOnToolsVersion = 6.4;
@@ -222,6 +228,7 @@
 				F1C234231B519F9900F79988 /* ViewController.m in Sources */,
 				F1C234201B519F9900F79988 /* AppDelegate.m in Sources */,
 				F1C2341D1B519F9900F79988 /* main.m in Sources */,
+				F1C234421B51A0BC00F79988 /* AODeviceInfoHub.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +354,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = asOne/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -357,7 +366,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = asOne/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

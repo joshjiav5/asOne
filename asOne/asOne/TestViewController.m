@@ -1,28 +1,28 @@
 //
-//  ViewController.m
+//  TestViewController.m
 //  asOne
 //
 //  Created by JoshJSZ on 7/11/15.
 //  Copyright (c) 2015 asOne. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TestViewController.h"
 
-@interface ViewController ()
+@interface TestViewController ()
 
-@property (nonatomic, strong) AODeviceInfoHub *hub;
+@property (nonatomic, strong) AODeviceInfoHub *infoHub;
 
 @end
 
-@implementation ViewController
+@implementation TestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.hub = [[AODeviceInfoHub alloc] init];
-    self.hub.delegate = self;
-    [self.hub updateLocationInDelegate];
+    self.infoHub = [[AODeviceInfoHub alloc] init];
+    self.infoHub.delegate = self;
+    [self.infoHub updateLocationInDelegate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +36,7 @@
 }
 
 - (IBAction)pressGetLocation:(UIButton *)sender {
-    [self.hub updateLocationInDelegate];
+    [self.infoHub updateLocationInDelegate];
 }
 
 @end

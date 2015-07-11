@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TestViewController.h
 //  asOne
 //
 //  Created by JoshJSZ on 7/11/15.
@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 #import "AODeviceInfoHub.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController <AODeviceInfoHubDelegate>
+@interface TestViewController : UIViewController <AODeviceInfoHubDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *labelOne;
 @property (weak, nonatomic) IBOutlet UILabel *labelTwo;
 
 @end
-

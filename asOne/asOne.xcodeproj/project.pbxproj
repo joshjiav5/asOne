@@ -84,15 +84,10 @@
 		F1C234191B519F9900F79988 /* asOne */ = {
 			isa = PBXGroup;
 			children = (
-				F1C2341E1B519F9900F79988 /* AppDelegate.h */,
-				F1C2341F1B519F9900F79988 /* AppDelegate.m */,
-				F1C234211B519F9900F79988 /* ViewController.h */,
-				F1C234221B519F9900F79988 /* ViewController.m */,
-				F1C234241B519F9900F79988 /* Main.storyboard */,
-				F1C234401B51A0BC00F79988 /* AODeviceInfoHub.h */,
-				F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */,
-				F1C234271B519F9900F79988 /* Images.xcassets */,
-				F1C234291B519F9900F79988 /* LaunchScreen.xib */,
+				F1C234471B51C1AD00F79988 /* View */,
+				F1C234491B51C20900F79988 /* Controller */,
+				F1C234481B51C1C000F79988 /* Model */,
+				F1C2344A1B51C21B00F79988 /* Assets */,
 				F1C2341A1B519F9900F79988 /* Supporting Files */,
 			);
 			path = asOne;
@@ -103,6 +98,8 @@
 			children = (
 				F1C2341B1B519F9900F79988 /* Info.plist */,
 				F1C2341C1B519F9900F79988 /* main.m */,
+				F1C2341E1B519F9900F79988 /* AppDelegate.h */,
+				F1C2341F1B519F9900F79988 /* AppDelegate.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -122,6 +119,41 @@
 				F1C234351B519F9A00F79988 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1C234471B51C1AD00F79988 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1C234211B519F9900F79988 /* ViewController.h */,
+				F1C234221B519F9900F79988 /* ViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F1C234481B51C1C000F79988 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1C234401B51A0BC00F79988 /* AODeviceInfoHub.h */,
+				F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F1C234491B51C20900F79988 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F1C234241B519F9900F79988 /* Main.storyboard */,
+				F1C234291B519F9900F79988 /* LaunchScreen.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F1C2344A1B51C21B00F79988 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F1C234271B519F9900F79988 /* Images.xcassets */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,6 +459,7 @@
 				F1C2343C1B519F9A00F79988 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1C2343D1B519F9A00F79988 /* Build configuration list for PBXNativeTarget "asOneTests" */ = {
 			isa = XCConfigurationList;
@@ -435,6 +468,7 @@
 				F1C2343F1B519F9A00F79988 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

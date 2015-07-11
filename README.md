@@ -1,4 +1,9 @@
 # asOne
  asOne - a #CHIMEHACK project
  
- Project by: Ibrahim, Revan, Josh, Brian, Jeff
+##Project by: 
++ Revan 
++ Ibrahim 
++ Josh 
++ Brian
++ Jeff

@@ -21,7 +21,31 @@
     [Parse setApplicationId:@"JrBPd9oqL2Y0LBv6MSWmT88IkB9wmmVKM4f88cll"
                   clientKey:@"g1JDEpWo4XLBgAHfZH83kItmZpLX1P3qdEsAcOHI"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    NSLog(@"Launched in background %d", UIApplicationStateBackground == application.applicationState);
+    //can also run code here?
     return YES;
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+    
+    NSURL *url = [[NSURL alloc] initWithString:@"https://"]; //TODO, where our data is coming from, may have to pass in
+    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            completionHandler(UIBackgroundFetchResultFailed);
+            return;
+        }
+        BOOL hasNewData = true; // TODO: figure out via parse whether new data has been updated
+        if (hasNewData) {
+            completionHandler(UIBackgroundFetchResultNewData);
+        } else {
+            completionHandler(UIBackgroundFetchResultNoData);
+        }
+    }];
+    
+    [task resume];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

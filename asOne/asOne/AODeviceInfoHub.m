@@ -8,6 +8,12 @@
 
 #import "AODeviceInfoHub.h"
 
+@interface AODeviceInfoHub ()
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+
+@end
+
 @implementation AODeviceInfoHub
 
 - (AODevInfoBattery *)getBatteryInfo {
@@ -17,6 +23,30 @@
     UIDeviceBatteryState batState = [myDevice batteryState];
     
     return [[AODevInfoBattery alloc] initWithBatteryLevel:batLeft state:batState];
+}
+
+- (void)askLocationPermission {
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self.locationManager requestAlwaysAuthorization];
+}
+
+- (void)updateLocationInDelegate {
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self.locationManager requestAlwaysAuthorization];
+    // Start getting location updates
+    [self.locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    [manager stopUpdatingLocation];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(updatedLoaction:)]) {
+        CLLocation *lastLocation = [locations lastObject];
+        if (lastLocation) {
+            [self.delegate updatedLoaction:lastLocation];
+        }
+    }
 }
 
 @end

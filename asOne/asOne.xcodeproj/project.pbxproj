@@ -22,14 +22,17 @@
 		D089DA5B1B51C51A0016F5E9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA5A1B51C51A0016F5E9 /* SystemConfiguration.framework */; };
 		D089DA5D1B51C5230016F5E9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA5C1B51C5230016F5E9 /* libz.dylib */; };
 		D089DA5F1B51C5300016F5E9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA5E1B51C5300016F5E9 /* libsqlite3.dylib */; };
+		D089DA691B51D3000016F5E9 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA661B51D3000016F5E9 /* FBSDKCoreKit.framework */; };
+		D089DA6A1B51D3010016F5E9 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA671B51D3000016F5E9 /* FBSDKLoginKit.framework */; };
+		D089DA6B1B51D3010016F5E9 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA681B51D3000016F5E9 /* FBSDKShareKit.framework */; };
 		F1C2341D1B519F9900F79988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C2341C1B519F9900F79988 /* main.m */; };
 		F1C234201B519F9900F79988 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C2341F1B519F9900F79988 /* AppDelegate.m */; };
-		F1C234231B519F9900F79988 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234221B519F9900F79988 /* ViewController.m */; };
 		F1C234261B519F9900F79988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C234241B519F9900F79988 /* Main.storyboard */; };
 		F1C234281B519F9900F79988 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C234271B519F9900F79988 /* Images.xcassets */; };
 		F1C2342B1B519F9900F79988 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1C234291B519F9900F79988 /* LaunchScreen.xib */; };
 		F1C234371B519F9A00F79988 /* asOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234361B519F9A00F79988 /* asOneTests.m */; };
 		F1C234421B51A0BC00F79988 /* AODeviceInfoHub.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */; };
+		F1C2344F1B51D53900F79988 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C2344E1B51D53900F79988 /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,13 +61,14 @@
 		D089DA5A1B51C51A0016F5E9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D089DA5C1B51C5230016F5E9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D089DA5E1B51C5300016F5E9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D089DA661B51D3000016F5E9 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		D089DA671B51D3000016F5E9 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		D089DA681B51D3000016F5E9 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		F1C234171B519F9900F79988 /* asOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = asOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C2341B1B519F9900F79988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1C2341C1B519F9900F79988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1C2341E1B519F9900F79988 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F1C2341F1B519F9900F79988 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F1C234211B519F9900F79988 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F1C234221B519F9900F79988 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F1C234251B519F9900F79988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1C234271B519F9900F79988 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F1C2342A1B519F9900F79988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 		F1C234361B519F9A00F79988 /* asOneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = asOneTests.m; sourceTree = "<group>"; };
 		F1C234401B51A0BC00F79988 /* AODeviceInfoHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AODeviceInfoHub.h; sourceTree = "<group>"; };
 		F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AODeviceInfoHub.m; sourceTree = "<group>"; };
+		F1C2344D1B51D53900F79988 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		F1C2344E1B51D53900F79988 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D089DA6A1B51D3010016F5E9 /* FBSDKLoginKit.framework in Frameworks */,
 				D089DA5F1B51C5300016F5E9 /* libsqlite3.dylib in Frameworks */,
 				D089DA5D1B51C5230016F5E9 /* libz.dylib in Frameworks */,
 				D089DA5B1B51C51A0016F5E9 /* SystemConfiguration.framework in Frameworks */,
@@ -93,6 +100,8 @@
 				D089DA4B1B51C4A80016F5E9 /* CFNetwork.framework in Frameworks */,
 				D089DA491B51C49E0016F5E9 /* AudioToolbox.framework in Frameworks */,
 				D089DA471B51C48B0016F5E9 /* Accounts.framework in Frameworks */,
+				D089DA6B1B51D3010016F5E9 /* FBSDKShareKit.framework in Frameworks */,
+				D089DA691B51D3000016F5E9 /* FBSDKCoreKit.framework in Frameworks */,
 				D089DA451B51C46F0016F5E9 /* Parse.framework in Frameworks */,
 				D089DA441B51C46F0016F5E9 /* Bolts.framework in Frameworks */,
 			);
@@ -141,6 +150,9 @@
 		F1C2341A1B519F9900F79988 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D089DA661B51D3000016F5E9 /* FBSDKCoreKit.framework */,
+				D089DA671B51D3000016F5E9 /* FBSDKLoginKit.framework */,
+				D089DA681B51D3000016F5E9 /* FBSDKShareKit.framework */,
 				F1C2341B1B519F9900F79988 /* Info.plist */,
 				F1C2341C1B519F9900F79988 /* main.m */,
 				F1C2341E1B519F9900F79988 /* AppDelegate.h */,
@@ -184,8 +196,8 @@
 		F1C234471B51C1AD00F79988 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F1C234211B519F9900F79988 /* ViewController.h */,
-				F1C234221B519F9900F79988 /* ViewController.m */,
+				F1C2344D1B51D53900F79988 /* TestViewController.h */,
+				F1C2344E1B51D53900F79988 /* TestViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -322,10 +334,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1C234231B519F9900F79988 /* ViewController.m in Sources */,
 				F1C234201B519F9900F79988 /* AppDelegate.m in Sources */,
 				F1C2341D1B519F9900F79988 /* main.m in Sources */,
 				F1C234421B51A0BC00F79988 /* AODeviceInfoHub.m in Sources */,
+				F1C2344F1B51D53900F79988 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

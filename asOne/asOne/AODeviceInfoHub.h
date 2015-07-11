@@ -8,12 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class AODevInfoBattery;
 
-@interface AODeviceInfoHub : NSObject
+@protocol AODeviceInfoHubDelegate <NSObject>
+@optional
+- (void)updatedLoaction:(CLLocation *)location;
+
+@end
+
+@interface AODeviceInfoHub : NSObject <CLLocationManagerDelegate>
+
+@property (nonatomic, weak) id <AODeviceInfoHubDelegate> delegate;
 
 - (AODevInfoBattery *)getBatteryInfo;
+- (void)updateLocationInDelegate;
 
 @end
 

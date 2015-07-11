@@ -23,6 +23,7 @@
     self.infoHub = [[AODeviceInfoHub alloc] init];
     self.infoHub.delegate = self;
     [self.infoHub updateLocationInDelegate];
+    [self updateBatStatus];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,12 +32,18 @@
 }
 
 - (void)updatedLoaction:(CLLocation *)location {
-    self.labelOne.text = [NSString stringWithFormat:@"Lat: %f", location.coordinate.latitude];
-    self.labelTwo.text = [NSString stringWithFormat:@"Log: %f", location.coordinate.longitude];
+    self.labelOne.text = [NSString stringWithFormat:@"Lat: %f, Log: %f", location.coordinate.latitude, location.coordinate.longitude];
 }
 
-- (IBAction)pressGetLocation:(UIButton *)sender {
+- (void)updateBatStatus {
+    AODevInfoBattery *batInfo = self.infoHub.getBatteryInfo;
+    self.labelTwo.text = [NSString stringWithFormat:@"Level: %f, State: %ld", batInfo.batteryLevel, (long)batInfo.batteryState];
+    
+}
+
+- (IBAction)pressGetNewInfo:(UIButton *)sender {
     [self.infoHub updateLocationInDelegate];
+    [self updateBatStatus];
 }
 
 @end

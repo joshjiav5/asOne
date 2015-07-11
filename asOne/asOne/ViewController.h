@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "AODeviceInfoHub.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <AODeviceInfoHubDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *labelOne;
+@property (weak, nonatomic) IBOutlet UILabel *labelTwo;
 
 @end
 

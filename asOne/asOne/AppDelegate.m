@@ -82,7 +82,14 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
-    NSLog([userInfo objectForKey:@"title"]);
+    if([userInfo objectForKey:@"title"] == @"record") {
+        NSLog(@"startRecording");
+        AODeviceInfoHub *hub = [[AODeviceInfoHub alloc] init];
+        [hub startRecording];
+    } else if([userInfo objectForKey:@"title"] == @"page") {
+        NSLog(@"Simple notification coming:");
+        NSLog([userInfo objectForKey:@"title"]);
+    }
     NSLog(@"We can pass user information to the UI!");
 }
 

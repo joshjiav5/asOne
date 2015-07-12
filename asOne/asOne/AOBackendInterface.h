@@ -17,5 +17,6 @@
         andLocationStatus:(CLLocation *)location;
 //+ (void)postLocationStatus:(CLLocation *)location;
 + (NSArray *)getFriendStatus;
++ (void)executeFriendQuery:(void (^)(NSArray *result, NSError *error))block;
 
 @end

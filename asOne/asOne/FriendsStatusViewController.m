@@ -8,13 +8,16 @@
 
 #import "FriendsStatusViewController.h"
 #import "FriendStatusTableViewCell.h"
+#import "AOBackendInterface.h"
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "AOUserModel.h"
 
 @interface FriendsStatusViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *friendsTableView;
 @property (weak, nonatomic) IBOutlet UIView *friendsTableViewFooterView;
 @property (weak, nonatomic) IBOutlet UIView *bottomToolBar;
+@property (strong, nonatomic) NSArray *friends;
 
 @end
 
@@ -25,7 +28,7 @@
     // Do any additional setup after loading the view.
     [self setupViewStyle];
     [self setupTableView];
-    
+    [self setupDataSource];
     NSLog(@"User: %@", [PFUser currentUser]);
 }
 
@@ -49,16 +52,30 @@
     self.friendsTableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0,self.friendsTableViewFooterView.frame.size.height - 2.0, 0);
 }
 
+- (void)setupDataSource {
+    [AOBackend executeFriendQuery:^(NSArray *result, NSError *error) {
+        [self getData:result];
+    }];
+}
+
+- (void)getData:(NSArray *)array {
+    self.friends = array;
+    [self.friendsTableView reloadData];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"friendsCell"];
+    AOUser *user = self.friends[indexPath.row];
     if ([cell isKindOfClass:[FriendStatusTableViewCell class]]) {
-        NSLog(@"Yeah!");
+        FriendStatusTableViewCell *friendCell = (FriendStatusTableViewCell *)cell;
+        friendCell.friendPic.image = user.profilePic;
+        friendCell.friendStatusLabel.text = user.status;
     }
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.friends.count;
 }
 
 - (IBAction)touchPlusBtn:(UIButton *)sender {

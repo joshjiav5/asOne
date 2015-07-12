@@ -40,6 +40,8 @@
 		F1C234521B51ECFA00F79988 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234511B51ECFA00F79988 /* MasterViewController.m */; };
 		F1C234551B51F38900F79988 /* FriendsStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234541B51F38900F79988 /* FriendsStatusViewController.m */; };
 		F1C234591B51F9AD00F79988 /* FriendStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234581B51F9AD00F79988 /* FriendStatusTableViewCell.m */; };
+		F1C79DBB1B526C920030BEF9 /* FriendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C79DBA1B526C920030BEF9 /* FriendDetailViewController.m */; };
+		F1C79DBF1B5271FF0030BEF9 /* StatusUpdateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C79DBE1B5271FF0030BEF9 /* StatusUpdateTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,10 @@
 		F1C234541B51F38900F79988 /* FriendsStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsStatusViewController.m; sourceTree = "<group>"; };
 		F1C234571B51F9AD00F79988 /* FriendStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendStatusTableViewCell.h; sourceTree = "<group>"; };
 		F1C234581B51F9AD00F79988 /* FriendStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendStatusTableViewCell.m; sourceTree = "<group>"; };
+		F1C79DB91B526C920030BEF9 /* FriendDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailViewController.h; sourceTree = "<group>"; };
+		F1C79DBA1B526C920030BEF9 /* FriendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailViewController.m; sourceTree = "<group>"; };
+		F1C79DBD1B5271FF0030BEF9 /* StatusUpdateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusUpdateTableViewCell.h; sourceTree = "<group>"; };
+		F1C79DBE1B5271FF0030BEF9 /* StatusUpdateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusUpdateTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +253,7 @@
 				F1C234501B51ECFA00F79988 /* MasterViewController.h */,
 				F1C234511B51ECFA00F79988 /* MasterViewController.m */,
 				F1C234561B51F97E00F79988 /* Friend Status View */,
+				F1C79DBC1B5271AB0030BEF9 /* Status Update */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -268,6 +275,17 @@
 				F1C234581B51F9AD00F79988 /* FriendStatusTableViewCell.m */,
 			);
 			name = "Friend Status View";
+			sourceTree = "<group>";
+		};
+		F1C79DBC1B5271AB0030BEF9 /* Status Update */ = {
+			isa = PBXGroup;
+			children = (
+				F1C79DB91B526C920030BEF9 /* FriendDetailViewController.h */,
+				F1C79DBA1B526C920030BEF9 /* FriendDetailViewController.m */,
+				F1C79DBD1B5271FF0030BEF9 /* StatusUpdateTableViewCell.h */,
+				F1C79DBE1B5271FF0030BEF9 /* StatusUpdateTableViewCell.m */,
+			);
+			name = "Status Update";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,9 +395,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C79DBF1B5271FF0030BEF9 /* StatusUpdateTableViewCell.m in Sources */,
 				D0B977E41B5230DB00AEC5EC /* AOUserModel.m in Sources */,
 				D0B977E11B5213D500AEC5EC /* AOBackendInterface.m in Sources */,
 				DB4D1B931B520E2700001FB1 /* LoginViewController.m in Sources */,
+				F1C79DBB1B526C920030BEF9 /* FriendDetailViewController.m in Sources */,
 				F1C234591B51F9AD00F79988 /* FriendStatusTableViewCell.m in Sources */,
 				F1C234201B519F9900F79988 /* AppDelegate.m in Sources */,
 				F1C2341D1B519F9900F79988 /* main.m in Sources */,

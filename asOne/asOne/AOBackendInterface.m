@@ -33,12 +33,12 @@ static NSArray *friends;
     return friends;
 }
 
-+ (void)executeFriendQuery {
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
++ (void)executeFriendQuery:(void (^)(NSArray *result, NSError *error))block {
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
     [query whereKey:@"groupNumber" equalTo:@1];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
+        if (!error.domain) {
             // The find succeeded.
             NSLog(@"Successfully retrieved %d users.", objects.count);
 
@@ -57,13 +57,14 @@ static NSArray *friends;
                 user.activeGroupID = object[@"groupNumber"];
                 user.microphoneActive = false;
                 
-                NSData * imageData = [[NSData alloc] initWithContentsOfURL: object[@"pictureURL"]];
+                NSURL *url = [NSURL URLWithString:object[@"pictureURL"]];
+                NSData * imageData = [[NSData alloc] initWithContentsOfURL:url];
                 user.profilePic = [UIImage imageWithData: imageData];
                 
                 [users addObject:user];
             }
             
-            friends = objects;
+            block(users, error);
             
         } else {
             // Log details of the failure

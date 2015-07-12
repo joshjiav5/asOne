@@ -343,17 +343,17 @@
                         <outlet property="bottomToolBar" destination="zc5-Ow-JS2" id="4dS-0N-uSN"/>
                         <outlet property="friendsTableView" destination="7hQ-O5-TnR" id="0Iv-sf-UAR"/>
                         <outlet property="friendsTableViewFooterView" destination="luB-Me-yHl" id="RYc-VZ-DBj"/>
-                        <segue destination="GX6-nA-pg1" kind="presentation" identifier="chat" modalPresentationStyle="fullScreen" id="D5v-l4-IhK"/>
+                        <segue destination="GX6-nA-pg1" kind="presentation" identifier="sendChat" modalPresentationStyle="fullScreen" id="D5v-l4-IhK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vu2-H1-8dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3040" y="996"/>
         </scene>
-        <!--View Controller-->
+        <!--Friend Detail View Controller-->
         <scene sceneID="xAp-a2-Kio">
             <objects>
-                <viewController id="BYv-j7-gkv" sceneMemberID="viewController">
+                <viewController id="BYv-j7-gkv" customClass="FriendDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cYa-aH-qww"/>
                         <viewControllerLayoutGuide type="bottom" id="xLh-hO-dEw"/>
@@ -361,9 +361,53 @@
                     <view key="view" contentMode="scaleToFill" id="7GI-tU-PoT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eAf-ml-Pta">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="statusCell" rowHeight="60" id="fcL-RH-4ny" customClass="StatusUpdateTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fcL-RH-4ny" id="Kke-I1-Scm">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljl-od-FDi">
+                                                    <rect key="frame" x="15" y="19" width="570" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="Ljl-od-FDi" secondAttribute="centerY" id="TiK-H6-rVV"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ljl-od-FDi" secondAttribute="trailing" constant="15" id="YaR-NN-mps"/>
+                                                <constraint firstItem="Ljl-od-FDi" firstAttribute="leading" secondItem="Kke-I1-Scm" secondAttribute="leading" constant="15" id="pzd-jn-yq5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eAf-ml-Pta" firstAttribute="top" secondItem="7GI-tU-PoT" secondAttribute="top" id="3w3-TC-sdZ"/>
+                            <constraint firstAttribute="bottom" secondItem="eAf-ml-Pta" secondAttribute="bottom" id="PbK-Gu-In1"/>
+                            <constraint firstItem="eAf-ml-Pta" firstAttribute="top" secondItem="cYa-aH-qww" secondAttribute="bottom" id="T2b-Rm-zBl"/>
+                            <constraint firstItem="eAf-ml-Pta" firstAttribute="leading" secondItem="7GI-tU-PoT" secondAttribute="leading" id="fJ3-nn-mpW"/>
+                            <constraint firstAttribute="trailing" secondItem="eAf-ml-Pta" secondAttribute="trailing" id="mkr-62-gZM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="T2b-Rm-zBl"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="7NC-hi-5TW"/>
+                    <connections>
+                        <outlet property="statusUpdateTableView" destination="eAf-ml-Pta" id="kXn-qG-VmX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8W-hg-dch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

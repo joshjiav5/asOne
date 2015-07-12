@@ -121,10 +121,12 @@
         
         if (myLocation && user.location) {
             double distance = [user.location distanceFromLocation: myLocation];
-            if (distance > 9999) {
-                friendCell.friendDistance.text = [NSString stringWithFormat: @">9999 m"];
+            if (distance < 999) {
+                friendCell.friendDistance.text = [NSString stringWithFormat: @"%.1f m", distance];
+            } else if (distance < 9999) {
+                friendCell.friendDistance.text = [NSString stringWithFormat: @"%.0f m", distance];
             } else {
-            friendCell.friendDistance.text = [NSString stringWithFormat: @"%.1f m", distance];
+                friendCell.friendDistance.text = [NSString stringWithFormat: @">9999 m"];
             }
             
         } else {

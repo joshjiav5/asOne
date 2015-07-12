@@ -58,9 +58,12 @@
     [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
     PFPush *push = [[PFPush alloc] init];
     [push setQuery:pushQuery];
-    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:@"message", @"Hey, is everything okay?", @"Title", @"Friendly ping", @"alert", @"Please let your support network you're okay!",
-    @"sound", @"chime",
-                          @"title", @"Friendly Ping",nil];
+    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:
+                          @"Hey, is everything okay?",@"message",
+                          @"Friendly ping", @"title",
+                          @"Please let your support network you're okay!", @"alert" ,
+                          @"default",@"sound",
+                          nil];
     [push setData:data];
     [push setQuery: pushQuery];
     [push sendPushInBackground];

@@ -447,21 +447,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7b-0u-VZX" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="277" y="495" width="46" height="30"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="logoshape" translatesAutoresizingMaskIntoConstraints="NO" id="T81-yp-TIL">
+                                <rect key="frame" x="225" y="175" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="CfB-5d-mgA"/>
+                                    <constraint firstAttribute="width" constant="150" id="MWg-ES-EPZ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="asOne" translatesAutoresizingMaskIntoConstraints="NO" id="diW-lK-nJv">
+                                <rect key="frame" x="240" y="120" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="diW-lK-nJv" secondAttribute="height" multiplier="147:37" id="3gf-oM-nAc"/>
+                                    <constraint firstAttribute="width" constant="120" id="UZg-ow-QOn"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7b-0u-VZX" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="277" y="395" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="lg5-pG-msb">
-                                <rect key="frame" x="172" y="177" width="257" height="246"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="T81-yp-TIL" secondAttribute="centerY" constant="50" id="1Co-ot-bgT"/>
                             <constraint firstAttribute="centerX" secondItem="T7b-0u-VZX" secondAttribute="centerX" id="4do-af-d61"/>
-                            <constraint firstAttribute="centerX" secondItem="lg5-pG-msb" secondAttribute="centerX" id="Dg8-od-QfN"/>
-                            <constraint firstAttribute="centerY" secondItem="lg5-pG-msb" secondAttribute="centerY" id="h7w-jp-hxJ"/>
+                            <constraint firstAttribute="centerX" secondItem="diW-lK-nJv" secondAttribute="centerX" id="bvd-T1-oqf"/>
+                            <constraint firstItem="T7b-0u-VZX" firstAttribute="top" secondItem="T81-yp-TIL" secondAttribute="bottom" constant="70" id="bzf-M7-sXX"/>
+                            <constraint firstAttribute="centerX" secondItem="T81-yp-TIL" secondAttribute="centerX" id="gSU-kx-Rzb"/>
+                            <constraint firstItem="T81-yp-TIL" firstAttribute="top" secondItem="diW-lK-nJv" secondAttribute="bottom" constant="25" id="mgB-za-bUf"/>
+                            <constraint firstAttribute="centerX" secondItem="T7b-0u-VZX" secondAttribute="centerX" id="poj-UJ-iKK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -471,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzd-AU-c81" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="1004"/>
+            <point key="canvasLocation" x="1196" y="1004"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ozn-zF-Jy8">
@@ -673,10 +688,11 @@
     </scenes>
     <resources>
         <image name="100" width="49" height="19"/>
-        <image name="Logo.png" width="252" height="236"/>
+        <image name="asOne" width="147" height="37"/>
         <image name="chatbubble" width="30" height="29"/>
         <image name="chevronIcon" width="16" height="27"/>
         <image name="deleteIcon" width="30" height="28"/>
+        <image name="logoshape" width="189" height="177"/>
         <image name="markerIcon" width="10" height="13"/>
         <image name="plusIcon" width="23" height="24"/>
         <image name="settingIcon" width="29" height="28"/>

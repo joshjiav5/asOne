@@ -12,6 +12,7 @@
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "AOUserModel.h"
+#import "DetailInfoViewController.h"
 
 @interface FriendsStatusViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *friendsTableView;
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomToolBar;
 @property (strong, nonatomic) NSArray *friends;
 @property (nonatomic, strong) AODeviceInfoHub *infoHub;
+@property (nonatomic) NSInteger selectedRow;
 
 @end
 
@@ -113,17 +115,33 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedRow = indexPath.row;
     [self performSegueWithIdentifier:@"showDetail" sender:nil];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showDetail"]) {
+        DetailInfoViewController *c = [segue destinationViewController];
+        AOUser *u = self.friends[self.selectedRow];
+        c.userName = u.name;
+        c.profileImg = u.profilePic;
+        c.status = u.status;
+//        c.batStatus = u.batStatus;
+        if (myLocation) {
+            double distance = [u.location distanceFromLocation: myLocation];
+            c.distance = [NSString stringWithFormat: @"%.1f m", distance];
+        } else {
+            //TODO more elegant handling of no location
+            c.distance = @"~10 m";
+        }
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

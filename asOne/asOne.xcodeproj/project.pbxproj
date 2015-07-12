@@ -170,7 +170,6 @@
 			children = (
 				F1C234471B51C1AD00F79988 /* View */,
 				F1C234491B51C20900F79988 /* Controller */,
-				F1C79DC31B5297A70030BEF9 /* Detail Info */,
 				F1C234481B51C1C000F79988 /* Model */,
 				F1C2344A1B51C21B00F79988 /* Assets */,
 				F1C2341A1B519F9900F79988 /* Supporting Files */,
@@ -258,6 +257,7 @@
 				F1C234511B51ECFA00F79988 /* MasterViewController.m */,
 				F1C234561B51F97E00F79988 /* Friend Status View */,
 				F1C79DBC1B5271AB0030BEF9 /* Status Update */,
+				F1C79DC31B5297A70030BEF9 /* Detail Info */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

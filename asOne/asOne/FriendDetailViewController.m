@@ -8,6 +8,7 @@
 
 #import "FriendDetailViewController.h"
 #import "StatusUpdateTableViewCell.h"
+#import "AOBackendInterface.h"
 
 @interface FriendDetailViewController ()
 
@@ -79,6 +80,11 @@
 }
 
 - (void)pressCancelBtn {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [AOBackend setStatus:self.statuses[indexPath.row]];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

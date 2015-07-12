@@ -159,6 +159,12 @@
     [self performSegueWithIdentifier:@"sendChat" sender:nil];
 }
 
+- (IBAction)touchXbtn:(UIButton *)sender {
+}
+
+- (IBAction)touchSettingBtn:(UIButton *)sender {
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.selectedRow = indexPath.row;
     [self performSegueWithIdentifier:@"showDetail" sender:nil];

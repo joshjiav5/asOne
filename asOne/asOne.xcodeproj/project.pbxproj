@@ -238,8 +238,8 @@
 			children = (
 				F1C234401B51A0BC00F79988 /* AODeviceInfoHub.h */,
 				F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */,
-				D0B977E01B5213D500AEC5EC /* AOBackendInterface.m */,
 				D0B977E21B52141400AEC5EC /* AOBackendInterface.h */,
+				D0B977E01B5213D500AEC5EC /* AOBackendInterface.m */,
 				D0B977E51B5230FE00AEC5EC /* AOUserModel.h */,
 				D0B977E31B5230DB00AEC5EC /* AOUserModel.m */,
 			);

@@ -51,7 +51,10 @@ static NSArray *friends;
                 user.name = object[@"realName"];
                 user.uid = object[@"username"];
                 user.batStatus = object[@"battery"];
-                user.location = object[@"location"];
+                
+                PFGeoPoint *point = object[@"location"];
+                user.location = [[CLLocation alloc] initWithLatitude: point.latitude
+                                                           longitude: point.longitude];
                 user.email = object[@"email"];
                 user.status = object[@"status"];
                 user.activeGroupID = object[@"groupNumber"];

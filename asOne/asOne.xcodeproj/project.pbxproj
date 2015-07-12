@@ -467,6 +467,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/asOne",
+					/Users/oprah/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = asOne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -483,6 +484,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/asOne",
+					/Users/oprah/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = asOne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

@@ -9,5 +9,10 @@
 #import "MasterViewController.h"
 
 @interface DetailInfoViewController : MasterViewController
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+@property (weak, nonatomic) IBOutlet UIImageView *batStatus;
+@property (strong, nonatomic) NSString *userName;
 
 @end

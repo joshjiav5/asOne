@@ -534,7 +534,6 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqd-C7-XAe">
                                         <rect key="frame" x="279" y="123" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="100" translatesAutoresizingMaskIntoConstraints="NO" id="zWJ-Lf-Sgx">
@@ -660,6 +659,12 @@
                             <constraint firstAttribute="trailing" secondItem="Rg4-GH-rvt" secondAttribute="trailing" id="xyh-zx-hDN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="batStatus" destination="zWJ-Lf-Sgx" id="tqw-7t-oFS"/>
+                        <outlet property="distanceLabel" destination="7ie-hy-p3p" id="rxe-rn-bGu"/>
+                        <outlet property="profilePic" destination="3vS-BW-WXJ" id="DIA-Hb-zOn"/>
+                        <outlet property="statusLabel" destination="sqd-C7-XAe" id="SLt-l3-pdt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4y-Ih-Mny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

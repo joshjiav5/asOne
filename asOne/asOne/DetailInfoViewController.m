@@ -17,11 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupViewStyle];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setupViewStyle {
+    self.profilePic.clipsToBounds = YES;
+    [self.profilePic.layer setCornerRadius:self.profilePic.layer.frame.size.height/2.0];
+    self.profilePic.layer.borderWidth = 0.5f;
+    self.profilePic.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    self.statusLabel.textColor = [UIColor whiteColor];
+    self.distanceLabel.textColor = [UIColor whiteColor];
 }
 
 /*

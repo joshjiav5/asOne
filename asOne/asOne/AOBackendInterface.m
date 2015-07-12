@@ -56,7 +56,9 @@ static NSArray *friends;
                 user.status = object[@"status"];
                 user.activeGroupID = object[@"groupNumber"];
                 user.microphoneActive = false;
-                user.profilePic = nil;
+                
+                NSData * imageData = [[NSData alloc] initWithContentsOfURL: object[@"pictureURL"]];
+                user.profilePic = [UIImage imageWithData: imageData];
                 
                 [users addObject:user];
             }

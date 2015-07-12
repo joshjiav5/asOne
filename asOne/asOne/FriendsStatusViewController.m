@@ -20,32 +20,6 @@
 
 @implementation FriendsStatusViewController
 
-- (void)_loadData {
-    // ...
-    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil];
-    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-        if (!error) {
-            // result is a dictionary with the user's Facebook data
-            NSDictionary *userData = (NSDictionary *)result;
-            
-            NSString *facebookID = userData[@"id"];
-            NSString *name = userData[@"name"];
-            NSString *location = userData[@"location"][@"name"];
-            NSString *gender = userData[@"gender"];
-            NSString *birthday = userData[@"birthday"];
-            NSString *relationship = userData[@"relationship_status"];
-            
-            NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
-            
-            // Now add the data to the UI elements
-            // ...
-            
-            NSLog(name);
-//            NSLog(userData[@"uid"]);
-        }
-    }];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -53,8 +27,6 @@
     [self setupTableView];
     
     NSLog(@"User: %@", [PFUser currentUser]);
-    
-    [self _loadData];
 }
 
 - (void)didReceiveMemoryWarning {

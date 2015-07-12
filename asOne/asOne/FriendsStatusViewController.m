@@ -174,7 +174,7 @@
 }
 
 - (IBAction)touchSettingBtn:(UIButton *)sender {
-    UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Settings" message:@"This will have all the settings!" delegate:self cancelButtonTitle:@"Okay!" otherButtonTitles: nil];
+    UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Settings" message:@"This will have all the settings!\n\nCredits:\n\nRevan Sopher\nJosh (Shaozhuo) Jia\nJeff Shaw\nMuhammad Ibrahim\nBrian Kim" delegate:self cancelButtonTitle:@"Okay!" otherButtonTitles: nil];
     [av show];
 }
 

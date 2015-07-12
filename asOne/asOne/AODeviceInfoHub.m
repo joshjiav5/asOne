@@ -70,12 +70,17 @@
     self.recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
     
     if (self.recorder) {
+        [self.recorder setDelegate:self];
         [self.recorder prepareToRecord];
         self.recorder.meteringEnabled = YES;
-        [self.recorder recordForDuration:(NSTimeInterval)15];
-        NSLog(@"Recording!");
     } else
         NSLog([error description]);
+    if(audioSession.inputAvailable) {
+        [self.recorder recordForDuration:(NSTimeInterval)15];
+        NSLog(@"Recording!");
+    } else {
+        NSLog(@"Input is not available...");
+    }
 }
 
 @end

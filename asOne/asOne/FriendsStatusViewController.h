@@ -7,7 +7,8 @@
 //
 
 #import "MasterViewController.h"
+#import "AODeviceInfoHub.h"
 
-@interface FriendsStatusViewController : MasterViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FriendsStatusViewController : MasterViewController <UITableViewDelegate, UITableViewDataSource, AODeviceInfoHubDelegate>
 
 @end

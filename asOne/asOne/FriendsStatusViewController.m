@@ -175,6 +175,7 @@
         c.userName = u.name;
         c.profileImg = u.profilePic;
         c.status = u.status;
+        c.location = u.location.coordinate;
         if (myLocation) {
             double distance = [u.location distanceFromLocation: myLocation];
             c.distance = [NSString stringWithFormat: @"%.1f m", distance];

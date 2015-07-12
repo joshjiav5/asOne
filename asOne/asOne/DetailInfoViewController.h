@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSString *status;
 @property (strong, nonatomic) NSString *distance;
 @property (strong, nonatomic) UIImage *profileImg;
+@property (strong, nonatomic) UIImage *batImg;
 @property (nonatomic) float batLevel;
 
 @end

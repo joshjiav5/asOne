@@ -127,10 +127,24 @@
             friendCell.friendDistance.text = @"~10 m";
         }
         
-        //TODO do something with battery info
-//        self.infoHub.getBatteryInfo;
+        friendCell.batteryImageView.image = [self getBatteryImage: user.batStatus.intValue];
     }
     return cell;
+}
+
+- (UIImage *)getBatteryImage:(int) bat {
+    NSString *level = @"0";
+    if (bat > 10) level = @"10";
+    if (bat > 20) level = @"20";
+    if (bat > 30) level = @"30";
+    if (bat > 40) level = @"40";
+    if (bat > 50) level = @"50";
+    if (bat > 60) level = @"60";
+    if (bat > 70) level = @"70";
+    if (bat > 80) level = @"80";
+    if (bat > 90) level = @"90";
+    
+    return [UIImage imageNamed: level];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -161,7 +175,6 @@
         c.userName = u.name;
         c.profileImg = u.profilePic;
         c.status = u.status;
-//        c.batStatus = u.batStatus;
         if (myLocation) {
             double distance = [u.location distanceFromLocation: myLocation];
             c.distance = [NSString stringWithFormat: @"%.1f m", distance];
@@ -169,6 +182,7 @@
             //TODO more elegant handling of no location
             c.distance = @"~10 m";
         }
+        c.batImg = [self getBatteryImage: u.batStatus.intValue];
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

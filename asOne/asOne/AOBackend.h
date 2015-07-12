@@ -11,6 +11,9 @@
 
 @interface AOBackend : NSObject
 
-
++ (void)postBatteryStatus:(AODevInfoBattery *)battery
+        andLocationStatus:(CLLocation *)location;
+//+ (void)postLocationStatus:(CLLocation *)location;
++ (NSArray *)getFriendStatus;
 
 @end

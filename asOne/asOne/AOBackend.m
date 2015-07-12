@@ -7,18 +7,25 @@
 //
 
 #import "AOBackend.h"
+#import <Parse/Parse.h>
 
 @implementation AOBackend
 
-- (void)postBatteryStatus:(AODevInfoBattery *)battery {
++ (void)postBatteryStatus:(AODevInfoBattery *)battery
+        andLocationStatus:(CLLocation *)location {
+//    PFObject *testObject = [PFObject objectWithClassName:@"User"];
+    PFUser *user = [PFUser currentUser];
+    user[@"battery"] = [NSNumber numberWithFloat: battery.batteryLevel];
+    user[@"location"] = [PFGeoPoint geoPointWithLocation: location];
     
+    [user saveInBackground];
 }
 
-- (void)postLocationStatus:(CLLocation *)location {
-    
-}
+//+ (void)postLocationStatus:(CLLocation *)location {
+//
+//}
 
-- (NSArray *)getFriendStatus {
++ (NSArray *)getFriendStatus {
     return nil;
 }
 

@@ -10,6 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import "AOBackend.h"
 
 @interface TestViewController ()
 
@@ -17,7 +18,9 @@
 
 @end
 
-@implementation TestViewController
+@implementation TestViewController {
+    CLLocation *myLocation;
+}
 
 // TODO get working
 - (void)_loadData {
@@ -45,7 +48,10 @@
     }];
 }
 - (IBAction)runSomething:(UIButton *)sender {
-    
+    AODevInfoBattery *batInfo = self.infoHub.getBatteryInfo;
+
+    [AOBackend postBatteryStatus: batInfo
+               andLocationStatus: myLocation];
 }
 
 - (void)viewDidLoad {
@@ -65,6 +71,7 @@
 }
 
 - (void)updatedLoaction:(CLLocation *)location {
+    myLocation = location;
     self.labelOne.text = [NSString stringWithFormat:@"Lat: %f, Log: %f", location.coordinate.latitude, location.coordinate.longitude];
 }
 

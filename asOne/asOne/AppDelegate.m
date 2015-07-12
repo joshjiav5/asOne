@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface AppDelegate ()
 
@@ -43,6 +44,7 @@
     [application registerForRemoteNotifications];
     NSLog(@"Launched in background %d", UIApplicationStateBackground == application.applicationState);
     //can also run code here?
+    [FBSDKLoginButton class];
     return YES;
 }
 

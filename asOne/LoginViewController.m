@@ -7,31 +7,57 @@
 //
 
 #import "LoginViewController.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import <Parse/Parse.h>
-#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+
 
 @implementation LoginViewController
 
-- (void)_loginWithFacebook {
-    // Set permissions required from the facebook user account
-    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
+-(void)viewDidLoad {
     
-    // Login PFUser using Facebook
-    [PFFacebookUtils logInInBackgroundWithReadPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        if (!user) {
-            NSLog(@"Uh oh. The user cancelled the Facebook login.");
-        } else if (user.isNew) {
-            NSLog(@"User signed up and logged in through Facebook!");
-        } else {
-            NSLog(@"User logged in through Facebook!");
+    self.fbLoginButton.delegate = self;
+    self.fbLoginButton.readPermissions = @[@"public_profile", @"user_friends"];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    if ([FBSDKAccessToken currentAccessToken]) {
+        // User is logged in, do work such as go to next view controller.
+        NSLog(@"user is already logged it");
+        [self performSegueWithIdentifier:@"friendsView" sender:nil];
+    }
+    
+}
+
+- (void)_loadPersonalData {
+    // ...
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil];
+    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            // result is a dictionary with the user's Facebook data
+            NSDictionary *userData = (NSDictionary *)result;
+            
+             NSLog(@"%@", userData);
         }
     }];
 }
 
-- (void)viewDidLoad {
-    NSLog(@"hello");
+- (void)_loadFriendData {
+    // ...
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me/friends/" parameters:nil];
+    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            // result is a dictionary with the user's Facebook data
+            NSDictionary *userData = (NSDictionary *)result;
+            
+            NSLog(@"%@", userData);
+        }
+    }];
+}
+
+-(void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
+    [self performSegueWithIdentifier:@"friendsView" sender:nil];
+    [self _loadPersonalData];
+    [self _loadFriendData];
+    
 }
 
 @end

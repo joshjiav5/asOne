@@ -60,7 +60,7 @@
     [push setQuery:pushQuery];
     NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:
                           @"Hey, is everything okay?",@"message",
-                          @"Friendly ping", @"title",
+                          @"page", @"title",
                           @"Please let your support network you're okay!", @"alert" ,
                           @"default",@"sound",
                           nil];

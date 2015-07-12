@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Test View Controller-->
@@ -17,24 +17,33 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFp-aP-B7n">
-                                <rect key="frame" x="279" y="70" width="42" height="21"/>
+                                <rect key="frame" x="279" y="70" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejG-tp-cwG">
-                                <rect key="frame" x="279" y="121" width="42" height="21"/>
+                                <rect key="frame" x="279" y="120" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AnM-Tc-N6w">
-                                <rect key="frame" x="255" y="172" width="90" height="30"/>
+                                <rect key="frame" x="255" y="171" width="90" height="30"/>
                                 <state key="normal" title="Get New Info">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="pressGetNewInfo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CUi-6Q-ael"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rri-0Q-5XF">
+                                <rect key="frame" x="252" y="221" width="96" height="30"/>
+                                <state key="normal" title="runSomething">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="runSomething:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0M6-QO-XSB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -46,6 +55,8 @@
                             <constraint firstItem="ejG-tp-cwG" firstAttribute="top" secondItem="hFp-aP-B7n" secondAttribute="bottom" constant="30" id="Nj0-V7-bAw"/>
                             <constraint firstAttribute="centerX" secondItem="AnM-Tc-N6w" secondAttribute="centerX" id="eDt-I6-Mpy"/>
                             <constraint firstAttribute="centerX" secondItem="hFp-aP-B7n" secondAttribute="centerX" id="ohb-iM-41U"/>
+                            <constraint firstItem="rri-0Q-5XF" firstAttribute="top" secondItem="AnM-Tc-N6w" secondAttribute="bottom" constant="20" id="uZu-Ta-3mG"/>
+                            <constraint firstAttribute="centerX" secondItem="rri-0Q-5XF" secondAttribute="centerX" id="zh8-Nc-xlG"/>
                         </constraints>
                     </view>
                     <connections>

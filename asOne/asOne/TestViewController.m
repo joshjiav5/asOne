@@ -44,6 +44,9 @@
         }
     }];
 }
+- (IBAction)runSomething:(UIButton *)sender {
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

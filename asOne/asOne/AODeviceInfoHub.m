@@ -7,6 +7,7 @@
 //
 
 #import "AODeviceInfoHub.h"
+#import <Parse/Parse.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
 
@@ -44,7 +45,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     [manager stopUpdatingLocation];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(updatedLoaction:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(::)]) {
         CLLocation *lastLocation = [locations lastObject];
         if (lastLocation) {
             [self.delegate updatedLoaction:lastLocation];
@@ -52,10 +53,24 @@
     }
 }
 
+- (void)pingFriends {
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
+    PFPush *push = [[PFPush alloc] init];
+    [push setQuery:pushQuery];
+    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:@"message", @"Hey, is everything okay?", @"Title", @"Friendly ping", nil];
+    [push setData:data];
+    [push setQuery: pushQuery];
+    [push sendPushInBackground];
+    
+     
+}
+
 - (void)startRecording {
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     NSError *err = nil;
     [audioSession setCategory :AVAudioSessionCategoryPlayAndRecord error:&err];
+    
     if(err){
         NSLog(@"audioSession: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
         return;
@@ -80,7 +95,7 @@
     NSError *error;
     
     self.recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
-    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryRecord error:NULL];
     if (self.recorder) {
         [self.recorder setDelegate:self];
         [self.recorder prepareToRecord];

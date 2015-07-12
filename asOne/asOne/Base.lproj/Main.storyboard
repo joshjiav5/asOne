@@ -649,16 +649,46 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Rg4-GH-rvt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Rg4-GH-rvt">
                                 <rect key="frame" x="0.0" y="264" width="600" height="336"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7kl-77-fps">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="actionCell" id="7kl-77-fps" customClass="ActionItemTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7kl-77-fps" id="sFX-0O-dgZ">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8e-D3-bcC" customClass="ActionItemTableViewCell">
+                                                    <rect key="frame" x="4" y="10" width="592" height="70"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nca-nC-C4y">
+                                                            <rect key="frame" x="10" y="24" width="572" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="nca-nC-C4y" firstAttribute="leading" secondItem="E8e-D3-bcC" secondAttribute="leading" constant="10" id="HvZ-5A-PSD"/>
+                                                        <constraint firstAttribute="centerX" secondItem="nca-nC-C4y" secondAttribute="centerX" id="fOB-MU-rBn"/>
+                                                        <constraint firstAttribute="centerY" secondItem="nca-nC-C4y" secondAttribute="centerY" id="pac-Zg-laP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="nca-nC-C4y" secondAttribute="trailing" constant="10" id="zuO-lw-fwp"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="E8e-D3-bcC" secondAttribute="trailing" constant="4" id="WAP-f7-8Os"/>
+                                                <constraint firstAttribute="bottom" secondItem="E8e-D3-bcC" secondAttribute="bottom" id="g5W-Dw-t76"/>
+                                                <constraint firstItem="E8e-D3-bcC" firstAttribute="top" secondItem="sFX-0O-dgZ" secondAttribute="top" constant="10" id="lmL-JD-7rn"/>
+                                                <constraint firstItem="E8e-D3-bcC" firstAttribute="leading" secondItem="sFX-0O-dgZ" secondAttribute="leading" constant="4" id="pOi-sy-5tF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="actionItemLabel" destination="nca-nC-C4y" id="bJn-ge-jWC"/>
+                                            <outlet property="actionItemView" destination="E8e-D3-bcC" id="Yld-1z-wbW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -675,6 +705,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actionTableView" destination="Rg4-GH-rvt" id="g8q-5p-z5X"/>
                         <outlet property="batStatus" destination="zWJ-Lf-Sgx" id="tqw-7t-oFS"/>
                         <outlet property="distanceLabel" destination="7ie-hy-p3p" id="rxe-rn-bGu"/>
                         <outlet property="profilePic" destination="3vS-BW-WXJ" id="DIA-Hb-zOn"/>

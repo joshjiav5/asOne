@@ -43,6 +43,11 @@
     [self.infoHub updateLocationInDelegate];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self setupDataSource];
+}
+
 - (void)updatedLoaction:(CLLocation *)location {
     myLocation = location;
     NSLog(@"Updating location");

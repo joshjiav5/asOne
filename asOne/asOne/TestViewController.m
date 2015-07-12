@@ -10,7 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
-#import "AOBackend.h"
+#import "AOBackendInterface.h"
 
 @interface TestViewController ()
 

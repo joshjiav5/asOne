@@ -67,7 +67,7 @@
             
             PFUser *user = [PFUser currentUser];
             user[@"realName"] = userData[@"name"];
-            user[@"status"] = @"idle";
+            user[@"status"] = @"-";
             user[@"groupNumber"] = @1; //TEMPORARY!
             user[@"pictureURL"] = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", userData[@"id"]];
             

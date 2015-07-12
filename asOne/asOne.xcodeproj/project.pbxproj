@@ -25,6 +25,9 @@
 		D089DA691B51D3000016F5E9 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA661B51D3000016F5E9 /* FBSDKCoreKit.framework */; };
 		D089DA6A1B51D3010016F5E9 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA671B51D3000016F5E9 /* FBSDKLoginKit.framework */; };
 		D089DA6B1B51D3010016F5E9 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA681B51D3000016F5E9 /* FBSDKShareKit.framework */; };
+		D089DA6F1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA6E1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework */; };
+		D089DA721B51EED30016F5E9 /* AOBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = D089DA711B51EED30016F5E9 /* AOBackend.m */; };
+		D089DA751B51F1670016F5E9 /* AOUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D089DA741B51F1670016F5E9 /* AOUser.m */; };
 		F1C2341D1B519F9900F79988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C2341C1B519F9900F79988 /* main.m */; };
 		F1C234201B519F9900F79988 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C2341F1B519F9900F79988 /* AppDelegate.m */; };
 		F1C234261B519F9900F79988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C234241B519F9900F79988 /* Main.storyboard */; };
@@ -33,6 +36,9 @@
 		F1C234371B519F9A00F79988 /* asOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234361B519F9A00F79988 /* asOneTests.m */; };
 		F1C234421B51A0BC00F79988 /* AODeviceInfoHub.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */; };
 		F1C2344F1B51D53900F79988 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C2344E1B51D53900F79988 /* TestViewController.m */; };
+		F1C234521B51ECFA00F79988 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234511B51ECFA00F79988 /* MasterViewController.m */; };
+		F1C234551B51F38900F79988 /* FriendsStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234541B51F38900F79988 /* FriendsStatusViewController.m */; };
+		F1C234591B51F9AD00F79988 /* FriendStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234581B51F9AD00F79988 /* FriendStatusTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +70,11 @@
 		D089DA661B51D3000016F5E9 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		D089DA671B51D3000016F5E9 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D089DA681B51D3000016F5E9 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		D089DA6E1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		D089DA701B51EED30016F5E9 /* AOBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOBackend.h; sourceTree = "<group>"; };
+		D089DA711B51EED30016F5E9 /* AOBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOBackend.m; sourceTree = "<group>"; };
+		D089DA731B51F1670016F5E9 /* AOUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOUser.h; sourceTree = "<group>"; };
+		D089DA741B51F1670016F5E9 /* AOUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOUser.m; sourceTree = "<group>"; };
 		F1C234171B519F9900F79988 /* asOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = asOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C2341B1B519F9900F79988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1C2341C1B519F9900F79988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,6 +90,12 @@
 		F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AODeviceInfoHub.m; sourceTree = "<group>"; };
 		F1C2344D1B51D53900F79988 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		F1C2344E1B51D53900F79988 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		F1C234501B51ECFA00F79988 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		F1C234511B51ECFA00F79988 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		F1C234531B51F38900F79988 /* FriendsStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsStatusViewController.h; sourceTree = "<group>"; };
+		F1C234541B51F38900F79988 /* FriendsStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsStatusViewController.m; sourceTree = "<group>"; };
+		F1C234571B51F9AD00F79988 /* FriendStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendStatusTableViewCell.h; sourceTree = "<group>"; };
+		F1C234581B51F9AD00F79988 /* FriendStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendStatusTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +105,7 @@
 			files = (
 				D089DA6A1B51D3010016F5E9 /* FBSDKLoginKit.framework in Frameworks */,
 				D089DA5F1B51C5300016F5E9 /* libsqlite3.dylib in Frameworks */,
+				D089DA6F1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				D089DA5D1B51C5230016F5E9 /* libz.dylib in Frameworks */,
 				D089DA5B1B51C51A0016F5E9 /* SystemConfiguration.framework in Frameworks */,
 				D089DA591B51C50F0016F5E9 /* StoreKit.framework in Frameworks */,
@@ -150,6 +168,7 @@
 		F1C2341A1B519F9900F79988 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D089DA6E1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework */,
 				D089DA661B51D3000016F5E9 /* FBSDKCoreKit.framework */,
 				D089DA671B51D3000016F5E9 /* FBSDKLoginKit.framework */,
 				D089DA681B51D3000016F5E9 /* FBSDKShareKit.framework */,
@@ -196,8 +215,8 @@
 		F1C234471B51C1AD00F79988 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F1C2344D1B51D53900F79988 /* TestViewController.h */,
-				F1C2344E1B51D53900F79988 /* TestViewController.m */,
+				F1C234241B519F9900F79988 /* Main.storyboard */,
+				F1C234291B519F9900F79988 /* LaunchScreen.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -207,6 +226,10 @@
 			children = (
 				F1C234401B51A0BC00F79988 /* AODeviceInfoHub.h */,
 				F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */,
+				D089DA701B51EED30016F5E9 /* AOBackend.h */,
+				D089DA711B51EED30016F5E9 /* AOBackend.m */,
+				D089DA731B51F1670016F5E9 /* AOUser.h */,
+				D089DA741B51F1670016F5E9 /* AOUser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -214,8 +237,11 @@
 		F1C234491B51C20900F79988 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F1C234241B519F9900F79988 /* Main.storyboard */,
-				F1C234291B519F9900F79988 /* LaunchScreen.xib */,
+				F1C2344D1B51D53900F79988 /* TestViewController.h */,
+				F1C2344E1B51D53900F79988 /* TestViewController.m */,
+				F1C234501B51ECFA00F79988 /* MasterViewController.h */,
+				F1C234511B51ECFA00F79988 /* MasterViewController.m */,
+				F1C234561B51F97E00F79988 /* Friend Status View */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -226,6 +252,17 @@
 				F1C234271B519F9900F79988 /* Images.xcassets */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		F1C234561B51F97E00F79988 /* Friend Status View */ = {
+			isa = PBXGroup;
+			children = (
+				F1C234531B51F38900F79988 /* FriendsStatusViewController.h */,
+				F1C234541B51F38900F79988 /* FriendsStatusViewController.m */,
+				F1C234571B51F9AD00F79988 /* FriendStatusTableViewCell.h */,
+				F1C234581B51F9AD00F79988 /* FriendStatusTableViewCell.m */,
+			);
+			name = "Friend Status View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,9 +371,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C234591B51F9AD00F79988 /* FriendStatusTableViewCell.m in Sources */,
 				F1C234201B519F9900F79988 /* AppDelegate.m in Sources */,
 				F1C2341D1B519F9900F79988 /* main.m in Sources */,
+				F1C234521B51ECFA00F79988 /* MasterViewController.m in Sources */,
 				F1C234421B51A0BC00F79988 /* AODeviceInfoHub.m in Sources */,
+<<<<<<< HEAD
+				F1C234551B51F38900F79988 /* FriendsStatusViewController.m in Sources */,
+=======
+				D089DA721B51EED30016F5E9 /* AOBackend.m in Sources */,
+				D089DA751B51F1670016F5E9 /* AOUser.m in Sources */,
+>>>>>>> origin/master
 				F1C2344F1B51D53900F79988 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +512,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/asOne",
+					/Users/oprah/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = asOne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -483,6 +529,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/asOne",
+					/Users/oprah/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = asOne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

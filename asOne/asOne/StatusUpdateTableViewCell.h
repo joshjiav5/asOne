@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface StatusUpdateTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *statusView;
+@property (weak, nonatomic) IBOutlet UILabel *status;
 
 @end

@@ -19,17 +19,17 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-    
+    [super viewDidAppear:animated];
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions: [NSDictionary dictionary]];
     [self _loginWithFacebook];
     [self _loadFriendData];
 
     
-//    if ([FBSDKAccessToken currentAccessToken]) {
-//         User is logged in, do work such as go to next view controller.
-//        NSLog(@"user is already logged it");
-//        [self performSegueWithIdentifier:@"friendsView" sender:nil];
-//    }
+    if ([FBSDKAccessToken currentAccessToken]) {
+         //User is logged in, do work such as go to next view controller.
+        NSLog(@"user is already logged it");
+        [self performSegueWithIdentifier:@"friendsView" sender:nil];
+    }
     
 }
 
@@ -48,7 +48,7 @@
             } else {
                 NSLog(@"User logged in through Facebook!");
             }
-            [self performSegueWithIdentifier:@"friendsView" sender:nil];
+//            [self performSegueWithIdentifier:@"friendsView" sender:nil];
         }
         NSLog(@"Error %@:%@", error, [error userInfo]);
     }];
@@ -92,11 +92,10 @@
 }
 
 -(void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
-    
-//    [self _loadPersonalData];
-//    [self _loadFriendData];
+    [self _loadPersonalData];
+    [self _loadFriendData];
 
-//    [self performSegueWithIdentifier:@"friendsView" sender:nil];
+    [self performSegueWithIdentifier:@"friendsView" sender:nil];
 }
 
 @end

@@ -86,6 +86,10 @@
     [self performSegueWithIdentifier:@"sendChat" sender:nil];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"showDetail" sender:nil];
+}
+
 /*
 #pragma mark - Navigation
 

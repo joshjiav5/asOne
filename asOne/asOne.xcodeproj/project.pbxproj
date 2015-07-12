@@ -42,6 +42,7 @@
 		F1C234591B51F9AD00F79988 /* FriendStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C234581B51F9AD00F79988 /* FriendStatusTableViewCell.m */; };
 		F1C79DBB1B526C920030BEF9 /* FriendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C79DBA1B526C920030BEF9 /* FriendDetailViewController.m */; };
 		F1C79DBF1B5271FF0030BEF9 /* StatusUpdateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C79DBE1B5271FF0030BEF9 /* StatusUpdateTableViewCell.m */; };
+		F1C79DC21B52979C0030BEF9 /* DetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C79DC11B52979C0030BEF9 /* DetailInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,8 @@
 		F1C79DBA1B526C920030BEF9 /* FriendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailViewController.m; sourceTree = "<group>"; };
 		F1C79DBD1B5271FF0030BEF9 /* StatusUpdateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusUpdateTableViewCell.h; sourceTree = "<group>"; };
 		F1C79DBE1B5271FF0030BEF9 /* StatusUpdateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusUpdateTableViewCell.m; sourceTree = "<group>"; };
+		F1C79DC01B52979C0030BEF9 /* DetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailInfoViewController.h; sourceTree = "<group>"; };
+		F1C79DC11B52979C0030BEF9 /* DetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,7 @@
 			children = (
 				F1C234471B51C1AD00F79988 /* View */,
 				F1C234491B51C20900F79988 /* Controller */,
+				F1C79DC31B5297A70030BEF9 /* Detail Info */,
 				F1C234481B51C1C000F79988 /* Model */,
 				F1C2344A1B51C21B00F79988 /* Assets */,
 				F1C2341A1B519F9900F79988 /* Supporting Files */,
@@ -288,6 +292,15 @@
 			name = "Status Update";
 			sourceTree = "<group>";
 		};
+		F1C79DC31B5297A70030BEF9 /* Detail Info */ = {
+			isa = PBXGroup;
+			children = (
+				F1C79DC01B52979C0030BEF9 /* DetailInfoViewController.h */,
+				F1C79DC11B52979C0030BEF9 /* DetailInfoViewController.m */,
+			);
+			name = "Detail Info";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -403,6 +416,7 @@
 				F1C234591B51F9AD00F79988 /* FriendStatusTableViewCell.m in Sources */,
 				F1C234201B519F9900F79988 /* AppDelegate.m in Sources */,
 				F1C2341D1B519F9900F79988 /* main.m in Sources */,
+				F1C79DC21B52979C0030BEF9 /* DetailInfoViewController.m in Sources */,
 				F1C234521B51ECFA00F79988 /* MasterViewController.m in Sources */,
 				F1C234421B51A0BC00F79988 /* AODeviceInfoHub.m in Sources */,
 				F1C234551B51F38900F79988 /* FriendsStatusViewController.m in Sources */,

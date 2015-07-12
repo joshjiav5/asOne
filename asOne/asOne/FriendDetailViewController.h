@@ -6,10 +6,9 @@
 //  Copyright (c) 2015 asOne. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "MasterViewController.h"
 
-@interface FriendDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FriendDetailViewController : MasterViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *statusUpdateTableView;
 
 @end

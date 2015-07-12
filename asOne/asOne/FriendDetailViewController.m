@@ -7,9 +7,12 @@
 //
 
 #import "FriendDetailViewController.h"
-#import "FriendStatusTableViewCell.h"
+#import "StatusUpdateTableViewCell.h"
 
 @interface FriendDetailViewController ()
+
+@property (nonatomic, strong) NSArray *statuses;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelBarBtn;
 
 @end
 
@@ -20,6 +23,14 @@
     // Do any additional setup after loading the view.
     [self setupViewStyle];
     [self setupTableView];
+    [self setupBarBtn];
+    self.statuses = @[@"Let’s go home",
+                      @"Staying the night",
+                      @"Already left",
+                      @"Home safe",
+                      @"On my way",
+                      @"Be there in 10 mins",
+                      @"Be there in 30 min"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,15 +39,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"friendsCell"];
-    if ([cell isKindOfClass:[FriendStatusTableViewCell class]]) {
-        NSLog(@"Yeah!");
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"statusCell"];
+    if ([cell isKindOfClass:[StatusUpdateTableViewCell class]]) {
+        ((StatusUpdateTableViewCell *)cell).status.text = self.statuses[indexPath.row];
     }
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.statuses.count;
 }
 
 - (void)setupViewStyle {
@@ -49,6 +60,7 @@
     self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
     UIImage* logoImage = [UIImage imageNamed:@"logoSmall"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:logoImage];
+    self.statusUpdateTableView.backgroundColor = [UIColor clearColor];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -58,7 +70,18 @@
 - (void)setupTableView {
     self.statusUpdateTableView.delegate = self;
     self.statusUpdateTableView.dataSource = self;
+    self.statusUpdateTableView.backgroundColor = [UIColor clearColor];
 }
+
+- (void)setupBarBtn {
+    self.cancelBarBtn.target = self;
+    self.cancelBarBtn.action = @selector(pressCancelBtn);
+}
+
+- (void)pressCancelBtn {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 /*
 #pragma mark - Navigation

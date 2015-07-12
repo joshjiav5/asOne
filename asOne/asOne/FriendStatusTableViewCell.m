@@ -17,6 +17,7 @@
     self.friendsContentView.clipsToBounds = YES;
     self.friendsContentView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.3];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.friendsSideView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

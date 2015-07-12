@@ -26,8 +26,8 @@
 		D089DA6A1B51D3010016F5E9 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA671B51D3000016F5E9 /* FBSDKLoginKit.framework */; };
 		D089DA6B1B51D3010016F5E9 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA681B51D3000016F5E9 /* FBSDKShareKit.framework */; };
 		D089DA6F1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA6E1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework */; };
-		D089DA721B51EED30016F5E9 /* AOBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = D089DA711B51EED30016F5E9 /* AOBackend.m */; };
-		D089DA751B51F1670016F5E9 /* AOUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D089DA741B51F1670016F5E9 /* AOUser.m */; };
+		DB4D1B931B520E2700001FB1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4D1B921B520E2700001FB1 /* LoginViewController.m */; };
+		DB4D1B951B520ECC00001FB1 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DB4D1B941B520ECC00001FB1 /* Logo.png */; };
 		F1C2341D1B519F9900F79988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C2341C1B519F9900F79988 /* main.m */; };
 		F1C234201B519F9900F79988 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C2341F1B519F9900F79988 /* AppDelegate.m */; };
 		F1C234261B519F9900F79988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C234241B519F9900F79988 /* Main.storyboard */; };
@@ -75,6 +75,9 @@
 		D089DA711B51EED30016F5E9 /* AOBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOBackend.m; sourceTree = "<group>"; };
 		D089DA731B51F1670016F5E9 /* AOUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOUser.h; sourceTree = "<group>"; };
 		D089DA741B51F1670016F5E9 /* AOUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOUser.m; sourceTree = "<group>"; };
+		DB4D1B911B520E2700001FB1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		DB4D1B921B520E2700001FB1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
+		DB4D1B941B520ECC00001FB1 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		F1C234171B519F9900F79988 /* asOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = asOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C2341B1B519F9900F79988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1C2341C1B519F9900F79988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 			children = (
 				F1C2344D1B51D53900F79988 /* TestViewController.h */,
 				F1C2344E1B51D53900F79988 /* TestViewController.m */,
+				DB4D1B911B520E2700001FB1 /* LoginViewController.h */,
+				DB4D1B921B520E2700001FB1 /* LoginViewController.m */,
 				F1C234501B51ECFA00F79988 /* MasterViewController.h */,
 				F1C234511B51ECFA00F79988 /* MasterViewController.m */,
 				F1C234561B51F97E00F79988 /* Friend Status View */,
@@ -249,6 +254,7 @@
 		F1C2344A1B51C21B00F79988 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				DB4D1B941B520ECC00001FB1 /* Logo.png */,
 				F1C234271B519F9900F79988 /* Images.xcassets */,
 			);
 			name = Assets;
@@ -351,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB4D1B951B520ECC00001FB1 /* Logo.png in Resources */,
 				F1C234261B519F9900F79988 /* Main.storyboard in Resources */,
 				F1C2342B1B519F9900F79988 /* LaunchScreen.xib in Resources */,
 				F1C234281B519F9900F79988 /* Images.xcassets in Resources */,
@@ -371,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB4D1B931B520E2700001FB1 /* LoginViewController.m in Sources */,
 				F1C234591B51F9AD00F79988 /* FriendStatusTableViewCell.m in Sources */,
 				F1C234201B519F9900F79988 /* AppDelegate.m in Sources */,
 				F1C2341D1B519F9900F79988 /* main.m in Sources */,

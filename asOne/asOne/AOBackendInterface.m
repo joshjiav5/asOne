@@ -48,7 +48,8 @@ static NSArray *friends;
                 NSLog(@"%@", object.objectId);
                 
                 AOUser *user = [AOUser alloc];
-                user.name = object[@"username"];
+                user.name = object[@"realName"];
+                user.uid = object[@"username"];
                 user.batStatus = object[@"battery"];
                 user.location = object[@"location"];
                 user.email = object[@"email"];

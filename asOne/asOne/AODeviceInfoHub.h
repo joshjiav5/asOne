@@ -16,6 +16,7 @@
 @optional
 - (void)updatedLoaction:(CLLocation *)location;
 
+
 @end
 
 @interface AODeviceInfoHub : NSObject <CLLocationManagerDelegate>
@@ -24,7 +25,7 @@
 
 - (AODevInfoBattery *)getBatteryInfo;
 - (void)updateLocationInDelegate;
-
+- (void)startRecording;
 @end
 
 @interface AODevInfoBattery : NSObject

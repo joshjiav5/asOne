@@ -13,7 +13,7 @@
 @interface AODeviceInfoHub ()
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property AVAudioRecorder *recorder;
+@property (nonatomic, strong) AVAudioRecorder *recorder;
 
 @end
 
@@ -54,8 +54,9 @@
 
 - (void)startRecording {
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    //continue filling out
-    NSURL *url = [NSURL fileURLWithPath:@"Documents/test.caf"];
+    NSString *urlString = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    
+    NSURL *url = [NSURL URLWithString:[urlString stringByAppendingString:@"/test.caf"]];
     
     NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
                               [NSNumber numberWithFloat: 44100.0],                 AVSampleRateKey,

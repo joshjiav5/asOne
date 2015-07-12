@@ -8,6 +8,8 @@
 
 #import "FriendsStatusViewController.h"
 #import "FriendStatusTableViewCell.h"
+#import <Parse/Parse.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface FriendsStatusViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *friendsTableView;
@@ -23,6 +25,8 @@
     // Do any additional setup after loading the view.
     [self setupViewStyle];
     [self setupTableView];
+    
+    NSLog(@"User: %@", [PFUser currentUser]);
 }
 
 - (void)didReceiveMemoryWarning {

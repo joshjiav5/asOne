@@ -9,9 +9,10 @@
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "AppDelegate.h"
-
+#import "AODeviceInfoHub.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 
 @interface AppDelegate ()
@@ -113,6 +114,8 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.s
     NSLog(@"Application entered background!");
+    AODeviceInfoHub *hub = [[AODeviceInfoHub alloc] init];
+    [hub startRecording];
     //Perhaps startRecording at this point for testing purposes?
 
 }

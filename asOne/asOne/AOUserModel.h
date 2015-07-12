@@ -12,6 +12,7 @@
 @interface AOUser : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *uid;
 @property (nonatomic, strong) NSNumber *batStatus;
 @property (nonatomic, strong) CLLocation *location;
 @property (nonatomic, strong) NSString *email;

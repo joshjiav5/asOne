@@ -12,13 +12,27 @@
 @implementation LoginViewController
 
 -(void)viewDidLoad {
+<<<<<<< HEAD
+    [super viewDidLoad];
+    self.fbLoginButton.delegate = self;
+    self.fbLoginButton.readPermissions = @[@"public_profile", @"user_friends"];
+=======
     
 //    self.fbLoginButton.delegate = self;
 //    self.fbLoginButton.readPermissions = @[@"public_profile", @"user_friends"];
+>>>>>>> 1dacf61474a51d23c43364666adcb879dfc6f5dd
     
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+<<<<<<< HEAD
+    [super viewDidAppear:animated];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        // User is logged in, do work such as go to next view controller.
+        NSLog(@"user is already logged it");
+        [self performSegueWithIdentifier:@"friendsView" sender:nil];
+    }
+=======
     
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions: [NSDictionary dictionary]];
     [self _loginWithFacebook];
@@ -53,6 +67,7 @@
         NSLog(@"Error %@:%@", error, [error userInfo]);
     }];
     
+>>>>>>> 1dacf61474a51d23c43364666adcb879dfc6f5dd
 }
 
 - (void)_loadPersonalData {

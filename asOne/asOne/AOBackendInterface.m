@@ -48,14 +48,17 @@ static NSArray *friends;
                 NSLog(@"%@", object.objectId);
                 
                 AOUser *user = [AOUser alloc];
-                user.name = object[@"username"];
+                user.name = object[@"realName"];
+                user.uid = object[@"username"];
                 user.batStatus = object[@"battery"];
                 user.location = object[@"location"];
                 user.email = object[@"email"];
                 user.status = object[@"status"];
                 user.activeGroupID = object[@"groupNumber"];
                 user.microphoneActive = false;
-                user.profilePic = nil;
+                
+                NSData * imageData = [[NSData alloc] initWithContentsOfURL: object[@"pictureURL"]];
+                user.profilePic = [UIImage imageWithData: imageData];
                 
                 [users addObject:user];
             }

@@ -45,7 +45,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     [manager stopUpdatingLocation];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(::)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(updatedLoaction:)]) {
         CLLocation *lastLocation = [locations lastObject];
         if (lastLocation) {
             [self.delegate updatedLoaction:lastLocation];
@@ -58,7 +58,9 @@
     [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
     PFPush *push = [[PFPush alloc] init];
     [push setQuery:pushQuery];
-    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:@"message", @"Hey, is everything okay?", @"Title", @"Friendly ping", nil];
+    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:@"message", @"Hey, is everything okay?", @"Title", @"Friendly ping", @"alert", @"Please let your support network you're okay!",
+    @"sound", @"chime",
+                          @"title", @"Friendly Ping",nil];
     [push setData:data];
     [push setQuery: pushQuery];
     [push sendPushInBackground];

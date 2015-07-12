@@ -41,6 +41,9 @@
 
 - (void)updatedLoaction:(CLLocation *)location {
     myLocation = location;
+    NSLog(@"Updating location");
+    [AOBackend postBatteryStatus: self.infoHub.getBatteryInfo
+               andLocationStatus: myLocation];
 }
 
 
@@ -92,7 +95,7 @@
         }
         
         //TODO do something with battery info
-        self.infoHub.getBatteryInfo;
+//        self.infoHub.getBatteryInfo;
     }
     return cell;
 }

@@ -73,4 +73,19 @@ static NSArray *friends;
     }];
 }
 
++ (void)setStatus: (NSString *)status {
+    PFUser *user = [PFUser currentUser];
+    user[@"status"] = status;
+    [user saveInBackground];
+    
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
+    PFPush *push = [[PFPush alloc] init];
+    [push setQuery:pushQuery];
+    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:@"message", status, @"Title", [PFUser currentUser][@"realName"], nil];
+    [push setData:data];
+    [push setQuery: pushQuery];
+    [push sendPushInBackground];
+}
+
 @end

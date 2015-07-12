@@ -127,7 +127,7 @@
             friendCell.friendDistance.text = @"~10 m";
         }
         
-        friendCell.batteryImageView.image = [self getBatteryImage: user.batStatus.intValue];
+        friendCell.batteryImageView.image = [self getBatteryImage: (user.batStatus.floatValue*100)];
     }
     return cell;
 }

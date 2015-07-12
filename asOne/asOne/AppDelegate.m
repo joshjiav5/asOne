@@ -12,8 +12,7 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import <AVFoundation/AVFoundation.h>
-#import <CoreAudio/CoreAudioTypes.h>
+
 
 @interface AppDelegate ()
 
@@ -98,6 +97,9 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.s
+    NSLog(@"Application entered background!");
+    //Perhaps startRecording at this point for testing purposes?
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

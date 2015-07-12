@@ -13,6 +13,7 @@
 @interface AODeviceInfoHub ()
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property AVAudioRecorder *recorder;
 
 @end
 
@@ -54,6 +55,26 @@
 - (void)startRecording {
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     //continue filling out
+    NSURL *url = [NSURL fileURLWithPath:@"Documents/test.caf"];
+    
+    NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
+                              [NSNumber numberWithFloat: 44100.0],                 AVSampleRateKey,
+                              [NSNumber numberWithInt: kAudioFormatAppleLossless], AVFormatIDKey,
+                              [NSNumber numberWithInt: 2],                         AVNumberOfChannelsKey,
+                              [NSNumber numberWithInt: AVAudioQualityMax],         AVEncoderAudioQualityKey,
+                              nil];
+    
+    NSError *error;
+    
+    self.recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
+    
+    if (self.recorder) {
+        [self.recorder prepareToRecord];
+        self.recorder.meteringEnabled = YES;
+        [self.recorder recordForDuration:(NSTimeInterval)15];
+        NSLog(@"Recording!");
+    } else
+        NSLog([error description]);
 }
 
 @end

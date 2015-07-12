@@ -7,6 +7,8 @@
 //
 
 #import "AODeviceInfoHub.h"
+#import <AVFoundation/AVFoundation.h>
+#import <CoreAudio/CoreAudioTypes.h>
 
 @interface AODeviceInfoHub ()
 
@@ -47,6 +49,11 @@
             [self.delegate updatedLoaction:lastLocation];
         }
     }
+}
+
+- (void)startRecording {
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    //continue filling out
 }
 
 @end

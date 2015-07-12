@@ -12,8 +12,11 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <CoreAudio/CoreAudioTypes.h>
 
 @interface AppDelegate ()
+
 
 @end
 
@@ -43,6 +46,12 @@
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
     NSLog(@"Launched in background %d", UIApplicationStateBackground == application.applicationState);
+    if([[AVAudioSession sharedInstance] respondsToSelector:@selector(requestRecordPermission:)])
+    {
+        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+            NSLog(@"permission : %d", granted);
+        }];
+    }
     //can also run code here?
     [FBSDKLoginButton class];
     return YES;

@@ -62,7 +62,7 @@
                           @"Hey, is everything okay?",@"message",
                           @"page", @"title",
                           @"Please let your support network you're okay!", @"alert" ,
-                          @"default",@"sound",
+                          @"alarm.aiff",@"sound",
                           nil];
     [push setData:data];
     [push setQuery: pushQuery];

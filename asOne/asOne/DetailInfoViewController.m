@@ -10,6 +10,7 @@
 #import "DetailMapTableViewCell.h"
 #import "ActionItemTableViewCell.h"
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
 
 @interface DetailInfoViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *actionTableView;
@@ -111,7 +112,19 @@
 }
 
 - (void)pingAction {
-    
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
+    PFPush *push = [[PFPush alloc] init];
+    [push setQuery:pushQuery];
+    NSDictionary *data = [[NSDictionary alloc] initWithObjectsAndKeys:
+                          @"Hey, is everything okay?",@"message",
+                          @"page", @"title",
+                          @"Please let your support network you're okay!", @"alert" ,
+                          @"alarm.aiff",@"sound",
+                          nil];
+    [push setData:data];
+    [push setQuery: pushQuery];
+    [push sendPushInBackground];
 }
                                     
 /*

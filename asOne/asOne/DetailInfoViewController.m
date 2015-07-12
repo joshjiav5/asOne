@@ -44,6 +44,7 @@
     self.statusLabel.text = self.status;
     self.distanceLabel.text = self.distance;
     self.profilePic.image = self.profileImg;
+    self.batStatus.image = self.batImg;
 }
 
 /*

@@ -37,6 +37,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationItem.title = self.userName;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+
 }
 
 - (void)fillInfo {

@@ -12,7 +12,7 @@
 @implementation LoginViewController
 
 -(void)viewDidLoad {
-    
+    [super viewDidLoad];
 //    self.fbLoginButton.delegate = self;
 //    self.fbLoginButton.readPermissions = @[@"public_profile", @"user_friends"];
     

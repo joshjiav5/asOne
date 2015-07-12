@@ -114,7 +114,7 @@
         friendCell.friendPic.image = user.profilePic;
         friendCell.friendStatusLabel.text = user.status;
         
-        if (myLocation) {
+        if (myLocation && user.location) {
             double distance = [user.location distanceFromLocation: myLocation];
             friendCell.friendDistance.text = [NSString stringWithFormat: @"%.1f m", distance];
         } else {

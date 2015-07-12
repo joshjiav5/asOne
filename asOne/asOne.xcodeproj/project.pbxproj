@@ -44,6 +44,8 @@
 		F1C79DBF1B5271FF0030BEF9 /* StatusUpdateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C79DBE1B5271FF0030BEF9 /* StatusUpdateTableViewCell.m */; };
 		F1C79DC21B52979C0030BEF9 /* DetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C79DC11B52979C0030BEF9 /* DetailInfoViewController.m */; };
 		F1C79DC61B52D76A0030BEF9 /* ActionItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C79DC51B52D76A0030BEF9 /* ActionItemTableViewCell.m */; };
+		F1C79DC91B52DC800030BEF9 /* DetailMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C79DC81B52DC800030BEF9 /* DetailMapTableViewCell.m */; };
+		F1C79DCB1B52DDA50030BEF9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C79DCA1B52DDA50030BEF9 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,9 @@
 		F1C79DC11B52979C0030BEF9 /* DetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailInfoViewController.m; sourceTree = "<group>"; };
 		F1C79DC41B52D76A0030BEF9 /* ActionItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionItemTableViewCell.h; sourceTree = "<group>"; };
 		F1C79DC51B52D76A0030BEF9 /* ActionItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionItemTableViewCell.m; sourceTree = "<group>"; };
+		F1C79DC71B52DC800030BEF9 /* DetailMapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMapTableViewCell.h; sourceTree = "<group>"; };
+		F1C79DC81B52DC800030BEF9 /* DetailMapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMapTableViewCell.m; sourceTree = "<group>"; };
+		F1C79DCA1B52DDA50030BEF9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C79DCB1B52DDA50030BEF9 /* MapKit.framework in Frameworks */,
 				D089DA6A1B51D3010016F5E9 /* FBSDKLoginKit.framework in Frameworks */,
 				D089DA5F1B51C5300016F5E9 /* libsqlite3.dylib in Frameworks */,
 				D089DA6F1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework in Frameworks */,
@@ -183,6 +189,7 @@
 		F1C2341A1B519F9900F79988 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F1C79DCA1B52DDA50030BEF9 /* MapKit.framework */,
 				D089DA6E1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework */,
 				D089DA661B51D3000016F5E9 /* FBSDKCoreKit.framework */,
 				D089DA671B51D3000016F5E9 /* FBSDKLoginKit.framework */,
@@ -302,6 +309,8 @@
 				F1C79DC11B52979C0030BEF9 /* DetailInfoViewController.m */,
 				F1C79DC41B52D76A0030BEF9 /* ActionItemTableViewCell.h */,
 				F1C79DC51B52D76A0030BEF9 /* ActionItemTableViewCell.m */,
+				F1C79DC71B52DC800030BEF9 /* DetailMapTableViewCell.h */,
+				F1C79DC81B52DC800030BEF9 /* DetailMapTableViewCell.m */,
 			);
 			name = "Detail Info";
 			sourceTree = "<group>";
@@ -416,6 +425,7 @@
 				F1C79DBF1B5271FF0030BEF9 /* StatusUpdateTableViewCell.m in Sources */,
 				D0B977E41B5230DB00AEC5EC /* AOUserModel.m in Sources */,
 				D0B977E11B5213D500AEC5EC /* AOBackendInterface.m in Sources */,
+				F1C79DC91B52DC800030BEF9 /* DetailMapTableViewCell.m in Sources */,
 				DB4D1B931B520E2700001FB1 /* LoginViewController.m in Sources */,
 				F1C79DBB1B526C920030BEF9 /* FriendDetailViewController.m in Sources */,
 				F1C234591B51F9AD00F79988 /* FriendStatusTableViewCell.m in Sources */,

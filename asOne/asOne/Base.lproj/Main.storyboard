@@ -649,7 +649,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Rg4-GH-rvt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Rg4-GH-rvt">
                                 <rect key="frame" x="0.0" y="264" width="600" height="336"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -659,10 +659,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7kl-77-fps" id="sFX-0O-dgZ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8e-D3-bcC" customClass="ActionItemTableViewCell">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E8e-D3-bcC">
                                                     <rect key="frame" x="4" y="10" width="592" height="70"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nca-nC-C4y">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nca-nC-C4y">
                                                             <rect key="frame" x="10" y="24" width="572" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -688,6 +688,27 @@
                                         <connections>
                                             <outlet property="actionItemLabel" destination="nca-nC-C4y" id="bJn-ge-jWC"/>
                                             <outlet property="actionItemView" destination="E8e-D3-bcC" id="Yld-1z-wbW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mapCell" rowHeight="150" id="1OF-yW-w5V" customClass="DetailMapTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1OF-yW-w5V" id="Ocj-zR-d0Z">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FhA-Gg-jxb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                                </mapView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FhA-Gg-jxb" firstAttribute="top" secondItem="Ocj-zR-d0Z" secondAttribute="top" id="3Lv-ZM-OXH"/>
+                                                <constraint firstAttribute="trailing" secondItem="FhA-Gg-jxb" secondAttribute="trailing" id="Cdg-9Z-gog"/>
+                                                <constraint firstAttribute="bottom" secondItem="FhA-Gg-jxb" secondAttribute="bottom" id="OKo-pE-Fu5"/>
+                                                <constraint firstItem="FhA-Gg-jxb" firstAttribute="leading" secondItem="Ocj-zR-d0Z" secondAttribute="leading" id="U85-zW-0JY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mapView" destination="FhA-Gg-jxb" id="S7c-6y-xCd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

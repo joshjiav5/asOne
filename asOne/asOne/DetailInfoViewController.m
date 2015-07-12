@@ -8,6 +8,7 @@
 
 #import "DetailInfoViewController.h"
 #import "ActionItemTableViewCell.h"
+#import <MapKit/MapKit.h>
 
 @interface DetailInfoViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *actionTableView;
@@ -59,19 +60,33 @@
 }
 
 - (void)setupActionItems {
-    self.actionItems = @[@"View footprint", @"Detect audio", @"Ping", @"Notify group"];
+    self.actionItems = @[@"Detect audio", @"Ping", @"Notify group"];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"actionCell"];
-    if ([cell isKindOfClass:[ActionItemTableViewCell class]]) {
-        ((ActionItemTableViewCell*)cell).actionItemLabel.text = self.actionItems[indexPath.row];
+    UITableViewCell *cell;
+    if (indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"mapCell"];
+        //HERE
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"actionCell"];
+        if ([cell isKindOfClass:[ActionItemTableViewCell class]]) {
+            ((ActionItemTableViewCell*)cell).actionItemLabel.text = self.actionItems[indexPath.row - 1];
+        }
     }
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.actionItems.count;
+    return self.actionItems.count + 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return 150.0;
+    } else {
+        return 70.0;
+    }
 }
 
 /*

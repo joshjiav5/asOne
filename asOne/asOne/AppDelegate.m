@@ -82,6 +82,7 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+    NSLog([userInfo objectForKey:@"title"]);
     if([userInfo objectForKey:@"title"] == @"record") {
         NSLog(@"startRecording");
         AODeviceInfoHub *hub = [[AODeviceInfoHub alloc] init];

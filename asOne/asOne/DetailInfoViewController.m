@@ -7,6 +7,7 @@
 //
 
 #import "DetailInfoViewController.h"
+#import "DetailMapTableViewCell.h"
 #import "ActionItemTableViewCell.h"
 #import <MapKit/MapKit.h>
 
@@ -67,8 +68,24 @@
     UITableViewCell *cell;
     if (indexPath.row == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"mapCell"];
-        //HERE
-    } else {
+        if ([cell isKindOfClass:[DetailMapTableViewCell class]]) {
+            DetailMapTableViewCell *mapCell = (DetailMapTableViewCell *)cell;
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            [annotation setCoordinate:self.location];
+            MKCoordinateSpan span;
+            span.latitudeDelta =  0.5;
+            span.longitudeDelta = 0.5;
+            MKCoordinateRegion region;
+            
+            region.center = self.location;
+            region.span = span;
+            [mapCell.mapView setRegion:region animated:YES];
+            [annotation setTitle:self.userName]; //You can set the subtitle too
+            [mapCell.mapView addAnnotation:annotation];
+            [mapCell.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading];
+        }
+    }
+    else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"actionCell"];
         if ([cell isKindOfClass:[ActionItemTableViewCell class]]) {
             NSString *itemString = self.actionItems[indexPath.row - 1];

@@ -159,6 +159,12 @@
     [self performSegueWithIdentifier:@"sendChat" sender:nil];
 }
 
+- (IBAction)touchXbtn:(UIButton *)sender {
+}
+
+- (IBAction)touchSettingBtn:(UIButton *)sender {
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.selectedRow = indexPath.row;
     [self performSegueWithIdentifier:@"showDetail" sender:nil];
@@ -175,6 +181,7 @@
         c.userName = u.name;
         c.profileImg = u.profilePic;
         c.status = u.status;
+        c.location = u.location.coordinate;
         if (myLocation) {
             double distance = [u.location distanceFromLocation: myLocation];
             c.distance = [NSString stringWithFormat: @"%.1f m", distance];

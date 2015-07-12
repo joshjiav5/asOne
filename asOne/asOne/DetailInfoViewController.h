@@ -7,6 +7,7 @@
 //
 
 #import "MasterViewController.h"
+#import <MapKit/MapKit.h>
 
 @interface DetailInfoViewController : MasterViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) NSString *distance;
 @property (strong, nonatomic) UIImage *profileImg;
 @property (strong, nonatomic) UIImage *batImg;
+@property (nonatomic) CLLocationCoordinate2D location;
 @property (nonatomic) float batLevel;
 
 @end

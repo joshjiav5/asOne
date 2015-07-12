@@ -18,10 +18,13 @@
 @property (weak, nonatomic) IBOutlet UIView *friendsTableViewFooterView;
 @property (weak, nonatomic) IBOutlet UIView *bottomToolBar;
 @property (strong, nonatomic) NSArray *friends;
+@property (nonatomic, strong) AODeviceInfoHub *infoHub;
 
 @end
 
-@implementation FriendsStatusViewController
+@implementation FriendsStatusViewController {
+    CLLocation *myLocation;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,7 +33,16 @@
     [self setupTableView];
     [self setupDataSource];
     NSLog(@"User: %@", [PFUser currentUser]);
+    
+    self.infoHub = [[AODeviceInfoHub alloc] init];
+    self.infoHub.delegate = self;
+    [self.infoHub updateLocationInDelegate];
 }
+
+- (void)updatedLoaction:(CLLocation *)location {
+    myLocation = location;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -70,6 +82,17 @@
         FriendStatusTableViewCell *friendCell = (FriendStatusTableViewCell *)cell;
         friendCell.friendPic.image = user.profilePic;
         friendCell.friendStatusLabel.text = user.status;
+        
+        if (myLocation) {
+            double distance = [user.location distanceFromLocation: myLocation];
+            friendCell.friendDistance.text = [NSString stringWithFormat: @"%.1f m", distance];
+        } else {
+            //TODO more elegant handling of no location
+            friendCell.friendDistance.text = @"~10 m";
+        }
+        
+        //TODO do something with battery info
+        self.infoHub.getBatteryInfo;
     }
     return cell;
 }

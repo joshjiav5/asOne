@@ -12,6 +12,10 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.backgroundColor = [UIColor clearColor];
+    [self.mapView.layer setCornerRadius:3.0f];
+    self.mapView.clipsToBounds = YES;
+    self.mapView.alpha = 0.9;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

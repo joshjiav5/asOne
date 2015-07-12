@@ -71,7 +71,11 @@
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"actionCell"];
         if ([cell isKindOfClass:[ActionItemTableViewCell class]]) {
-            ((ActionItemTableViewCell*)cell).actionItemLabel.text = self.actionItems[indexPath.row - 1];
+            NSString *itemString = self.actionItems[indexPath.row - 1];
+            ((ActionItemTableViewCell*)cell).actionItemLabel.text = itemString;
+            if([itemString isEqualToString:@"Ping"]) {
+                [self pingAction];
+            }
         }
     }
     return cell;
@@ -83,12 +87,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        return 150.0;
+        return 140.0;
     } else {
-        return 70.0;
+        return 60.0;
     }
 }
 
+- (void)pingAction {
+    
+}
+                                    
 /*
 #pragma mark - Navigation
 

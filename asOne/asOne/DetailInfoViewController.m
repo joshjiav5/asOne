@@ -91,9 +91,6 @@
         if ([cell isKindOfClass:[ActionItemTableViewCell class]]) {
             NSString *itemString = self.actionItems[indexPath.row - 1];
             ((ActionItemTableViewCell*)cell).actionItemLabel.text = itemString;
-            if([itemString isEqualToString:@"Ping"]) {
-                [self pingAction];
-            }
         }
     }
     return cell;
@@ -126,7 +123,19 @@
     [push setQuery: pushQuery];
     [push sendPushInBackground];
 }
-                                    
+
+- (void)recordAction {
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 2) {
+        [self pingAction];
+    }
+    if (indexPath.row == 1) {
+        [self recordAction];
+    }
+}
 /*
 #pragma mark - Navigation
 

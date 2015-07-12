@@ -121,7 +121,12 @@
         
         if (myLocation && user.location) {
             double distance = [user.location distanceFromLocation: myLocation];
+            if (distance > 9999) {
+                friendCell.friendDistance.text = [NSString stringWithFormat: @">9999 m"];
+            } else {
             friendCell.friendDistance.text = [NSString stringWithFormat: @"%.1f m", distance];
+            }
+            
         } else {
             //TODO more elegant handling of no location
             friendCell.friendDistance.text = @"~10 m";

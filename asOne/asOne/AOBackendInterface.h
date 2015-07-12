@@ -11,6 +11,8 @@
 
 @interface AOBackend : NSObject
 
+//@property (nonatomic, strong) NSArray *friends;
+
 + (void)postBatteryStatus:(AODevInfoBattery *)battery
         andLocationStatus:(CLLocation *)location;
 //+ (void)postLocationStatus:(CLLocation *)location;

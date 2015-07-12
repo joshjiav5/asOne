@@ -27,6 +27,7 @@
 		D089DA6B1B51D3010016F5E9 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA681B51D3000016F5E9 /* FBSDKShareKit.framework */; };
 		D089DA6F1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D089DA6E1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework */; };
 		D0B977E11B5213D500AEC5EC /* AOBackendInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B977E01B5213D500AEC5EC /* AOBackendInterface.m */; };
+		D0B977E41B5230DB00AEC5EC /* AOUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B977E31B5230DB00AEC5EC /* AOUserModel.m */; };
 		DB4D1B931B520E2700001FB1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4D1B921B520E2700001FB1 /* LoginViewController.m */; };
 		DB4D1B951B520ECC00001FB1 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DB4D1B941B520ECC00001FB1 /* Logo.png */; };
 		F1C2341D1B519F9900F79988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C2341C1B519F9900F79988 /* main.m */; };
@@ -72,10 +73,10 @@
 		D089DA671B51D3000016F5E9 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D089DA681B51D3000016F5E9 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		D089DA6E1B51E49F0016F5E9 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		D089DA731B51F1670016F5E9 /* AOUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOUser.h; sourceTree = "<group>"; };
-		D089DA741B51F1670016F5E9 /* AOUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOUser.m; sourceTree = "<group>"; };
 		D0B977E01B5213D500AEC5EC /* AOBackendInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOBackendInterface.m; sourceTree = "<group>"; };
 		D0B977E21B52141400AEC5EC /* AOBackendInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AOBackendInterface.h; sourceTree = "<group>"; };
+		D0B977E31B5230DB00AEC5EC /* AOUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOUserModel.m; sourceTree = "<group>"; };
+		D0B977E51B5230FE00AEC5EC /* AOUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AOUserModel.h; sourceTree = "<group>"; };
 		DB4D1B911B520E2700001FB1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		DB4D1B921B520E2700001FB1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		DB4D1B941B520ECC00001FB1 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
@@ -232,8 +233,8 @@
 				F1C234411B51A0BC00F79988 /* AODeviceInfoHub.m */,
 				D0B977E01B5213D500AEC5EC /* AOBackendInterface.m */,
 				D0B977E21B52141400AEC5EC /* AOBackendInterface.h */,
-				D089DA731B51F1670016F5E9 /* AOUser.h */,
-				D089DA741B51F1670016F5E9 /* AOUser.m */,
+				D0B977E51B5230FE00AEC5EC /* AOUserModel.h */,
+				D0B977E31B5230DB00AEC5EC /* AOUserModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -379,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B977E41B5230DB00AEC5EC /* AOUserModel.m in Sources */,
 				D0B977E11B5213D500AEC5EC /* AOBackendInterface.m in Sources */,
 				DB4D1B931B520E2700001FB1 /* LoginViewController.m in Sources */,
 				F1C234591B51F9AD00F79988 /* FriendStatusTableViewCell.m in Sources */,

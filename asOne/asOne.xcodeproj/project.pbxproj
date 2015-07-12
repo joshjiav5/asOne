@@ -376,17 +376,7 @@
 				F1C2341D1B519F9900F79988 /* main.m in Sources */,
 				F1C234521B51ECFA00F79988 /* MasterViewController.m in Sources */,
 				F1C234421B51A0BC00F79988 /* AODeviceInfoHub.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
 				F1C234551B51F38900F79988 /* FriendsStatusViewController.m in Sources */,
-=======
-				D089DA721B51EED30016F5E9 /* AOBackend.m in Sources */,
-				D089DA751B51F1670016F5E9 /* AOUser.m in Sources */,
->>>>>>> origin/master
-=======
-				D089DA721B51EED30016F5E9 /* AOBackend.m in Sources */,
-				D089DA751B51F1670016F5E9 /* AOUser.m in Sources */,
->>>>>>> origin/master
 				F1C2344F1B51D53900F79988 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -152,7 +152,9 @@
 }
 
 - (IBAction)touchPlusBtn:(UIButton *)sender {
-
+    UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Add freinds!" message:@"Type the name of the freind you want to add!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add!", nil];
+    av.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [av show];
 }
 
 - (IBAction)touchChatBtn:(UIButton *)sender {
@@ -160,9 +162,13 @@
 }
 
 - (IBAction)touchXbtn:(UIButton *)sender {
+    UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Confirmation" message:@"Are you sure you want to be removed from the group?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes!", nil];
+    [av show];
 }
 
 - (IBAction)touchSettingBtn:(UIButton *)sender {
+    UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Settings" message:@"This will have all the settings!" delegate:self cancelButtonTitle:@"Okay!" otherButtonTitles: nil];
+    [av show];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

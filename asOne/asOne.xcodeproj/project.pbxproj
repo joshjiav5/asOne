@@ -29,7 +29,6 @@
 		D0B977E11B5213D500AEC5EC /* AOBackendInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B977E01B5213D500AEC5EC /* AOBackendInterface.m */; };
 		D0B977E41B5230DB00AEC5EC /* AOUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B977E31B5230DB00AEC5EC /* AOUserModel.m */; };
 		DB4D1B931B520E2700001FB1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4D1B921B520E2700001FB1 /* LoginViewController.m */; };
-		DB4D1B951B520ECC00001FB1 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DB4D1B941B520ECC00001FB1 /* Logo.png */; };
 		F1C2341D1B519F9900F79988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C2341C1B519F9900F79988 /* main.m */; };
 		F1C234201B519F9900F79988 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1C2341F1B519F9900F79988 /* AppDelegate.m */; };
 		F1C234261B519F9900F79988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C234241B519F9900F79988 /* Main.storyboard */; };
@@ -79,7 +78,6 @@
 		D0B977E51B5230FE00AEC5EC /* AOUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AOUserModel.h; sourceTree = "<group>"; };
 		DB4D1B911B520E2700001FB1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		DB4D1B921B520E2700001FB1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
-		DB4D1B941B520ECC00001FB1 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		F1C234171B519F9900F79988 /* asOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = asOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C2341B1B519F9900F79988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1C2341C1B519F9900F79988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 		F1C2344A1B51C21B00F79988 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				DB4D1B941B520ECC00001FB1 /* Logo.png */,
 				F1C234271B519F9900F79988 /* Images.xcassets */,
 			);
 			name = Assets;
@@ -331,6 +328,7 @@
 					};
 					F1C2342F1B519F9A00F79988 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = LA98E724VK;
 						TestTargetID = F1C234161B519F9900F79988;
 					};
 				};
@@ -359,7 +357,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB4D1B951B520ECC00001FB1 /* Logo.png in Resources */,
 				F1C234261B519F9900F79988 /* Main.storyboard in Resources */,
 				F1C2342B1B519F9900F79988 /* LaunchScreen.xib in Resources */,
 				F1C234281B519F9900F79988 /* Images.xcassets in Resources */,
@@ -549,8 +546,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.example.AsOne";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.example.AsOne";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -562,6 +559,7 @@
 				INFOPLIST_FILE = asOneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/asOne.app/asOne";
 			};
 			name = Debug;
@@ -570,8 +568,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.example.AsOne";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.example.AsOne";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -579,6 +577,7 @@
 				INFOPLIST_FILE = asOneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/asOne.app/asOne";
 			};
 			name = Release;

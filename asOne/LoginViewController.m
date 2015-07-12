@@ -12,19 +12,19 @@
 @implementation LoginViewController
 
 -(void)viewDidLoad {
-    
+    [super viewDidLoad];
     self.fbLoginButton.delegate = self;
     self.fbLoginButton.readPermissions = @[@"public_profile", @"user_friends"];
     
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if ([FBSDKAccessToken currentAccessToken]) {
         // User is logged in, do work such as go to next view controller.
         NSLog(@"user is already logged it");
         [self performSegueWithIdentifier:@"friendsView" sender:nil];
     }
-    
 }
 
 - (void)_loadPersonalData {

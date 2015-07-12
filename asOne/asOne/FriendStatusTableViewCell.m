@@ -17,7 +17,10 @@
     self.friendsContentView.clipsToBounds = YES;
     self.friendsContentView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.3];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.friendsSideView.backgroundColor = [UIColor clearColor];
+    [self.friendPic.layer setCornerRadius:self.friendPic.layer.frame.size.height/2.0];
+    self.friendPic.clipsToBounds = YES;
+    self.friendPic.layer.borderWidth = 0.5f;
+    self.friendPic.layer.borderColor = [UIColor darkGrayColor].CGColor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

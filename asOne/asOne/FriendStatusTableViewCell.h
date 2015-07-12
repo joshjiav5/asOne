@@ -11,7 +11,10 @@
 @interface FriendStatusTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *friendsContentView;
-@property (weak, nonatomic) IBOutlet UIView *friendsSideView;
 @property (weak, nonatomic) IBOutlet UIImageView *friendPic;
+@property (weak, nonatomic) IBOutlet UILabel *friendStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *friendDistance;
+@property (weak, nonatomic) IBOutlet UIImageView *batteryImageView;
+
 
 @end

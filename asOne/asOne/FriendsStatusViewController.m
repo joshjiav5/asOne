@@ -42,6 +42,7 @@
 - (void)setupTableView {
     self.friendsTableView.delegate = self;
     self.friendsTableView.dataSource = self;
+    self.friendsTableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0,self.friendsTableViewFooterView.frame.size.height - 2.0, 0);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

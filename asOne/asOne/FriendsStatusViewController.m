@@ -7,6 +7,7 @@
 //
 
 #import "FriendsStatusViewController.h"
+#import "FriendStatusTableViewCell.h"
 
 @interface FriendsStatusViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *friendsTableView;
@@ -21,6 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setupViewStyle];
+    [self setupTableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,13 +33,27 @@
 - (void)setupViewStyle {
     self.friendsTableView.backgroundColor = [UIColor clearColor];
     self.friendsTableViewFooterView.backgroundColor = [UIColor clearColor];
-    self.bottomToolBar.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.8];
+    self.bottomToolBar.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.9];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:245.0/255.0 green:165.0/255.0 blue:58.0/255.0 alpha:1.0];
     UIImage* logoImage = [UIImage imageNamed:@"logoSmall"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:logoImage];
 }
 
 - (void)setupTableView {
+    self.friendsTableView.delegate = self;
+    self.friendsTableView.dataSource = self;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"friendsCell"];
+    if ([cell isKindOfClass:[FriendStatusTableViewCell class]]) {
+        NSLog(@"Yeah!");
+    }
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
 }
 
 /*

@@ -79,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7hQ-O5-TnR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7hQ-O5-TnR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="luB-Me-yHl">
@@ -88,12 +88,27 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="162-Gc-C46" customClass="FriendStatusTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendsCell" rowHeight="130" id="162-Gc-C46" customClass="FriendStatusTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="162-Gc-C46" id="pL9-f8-MDN">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jk4-8b-36x">
+                                                    <rect key="frame" x="4" y="3" width="592" height="127"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="jk4-8b-36x" secondAttribute="trailing" constant="4" id="PNx-7v-znq"/>
+                                                <constraint firstItem="jk4-8b-36x" firstAttribute="top" secondItem="pL9-f8-MDN" secondAttribute="top" constant="3" id="c68-hT-pvd"/>
+                                                <constraint firstItem="jk4-8b-36x" firstAttribute="leading" secondItem="pL9-f8-MDN" secondAttribute="leading" constant="4" id="cIT-6O-gDL"/>
+                                                <constraint firstAttribute="bottom" secondItem="jk4-8b-36x" secondAttribute="bottom" id="gB7-hb-aaz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="friendsContentView" destination="jk4-8b-36x" id="14I-hL-oPb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

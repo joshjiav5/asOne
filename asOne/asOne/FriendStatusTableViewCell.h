@@ -10,4 +10,6 @@
 
 @interface FriendStatusTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *friendsContentView;
+
 @end

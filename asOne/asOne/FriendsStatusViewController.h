@@ -8,6 +8,6 @@
 
 #import "MasterViewController.h"
 
-@interface FriendsStatusViewController : MasterViewController
+@interface FriendsStatusViewController : MasterViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

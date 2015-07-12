@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IiL-L3-IQN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="osF-o1-DgK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -67,6 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-136" y="1211"/>
         </scene>
         <!--Friends Status View Controller-->
         <scene sceneID="iK4-AS-gSX">
@@ -231,17 +232,16 @@
                         <outlet property="bottomToolBar" destination="zc5-Ow-JS2" id="4dS-0N-uSN"/>
                         <outlet property="friendsTableView" destination="7hQ-O5-TnR" id="0Iv-sf-UAR"/>
                         <outlet property="friendsTableViewFooterView" destination="luB-Me-yHl" id="RYc-VZ-DBj"/>
-                        <segue destination="osF-o1-DgK" kind="presentation" identifier="sendChat" modalPresentationStyle="fullScreen" id="q9J-tB-GZb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vu2-H1-8dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1272" y="1060"/>
+            <point key="canvasLocation" x="3040" y="996"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="qwf-93-wMm">
             <objects>
-                <viewController id="osF-o1-DgK" sceneMemberID="viewController">
+                <viewController id="osF-o1-DgK" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ph9-Tn-gac"/>
                         <viewControllerLayoutGuide type="bottom" id="LZa-p1-uTf"/>
@@ -274,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzd-AU-c81" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952" y="1060"/>
+            <point key="canvasLocation" x="714" y="1964"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ozn-zF-Jy8">
@@ -292,7 +292,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zv8-Rs-t8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430" y="964"/>
+            <point key="canvasLocation" x="1942" y="1004"/>
         </scene>
     </scenes>
     <resources>

@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSArray *friends;
 @property (nonatomic, strong) AODeviceInfoHub *infoHub;
 @property (nonatomic) NSInteger selectedRow;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -34,6 +35,7 @@
     [self setupViewStyle];
     [self setupTableView];
     [self setupDataSource];
+    [self setupPullToRefresh];
     NSLog(@"User: %@", [PFUser currentUser]);
     
     self.infoHub = [[AODeviceInfoHub alloc] init];
@@ -75,9 +77,33 @@
     }];
 }
 
+- (void)setupPullToRefresh {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor clearColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(setupDataSource)
+                  forControlEvents:UIControlEventValueChanged];
+    [self.friendsTableView addSubview:self.refreshControl];
+
+}
+
 - (void)getData:(NSArray *)array {
     self.friends = array;
     [self.friendsTableView reloadData];
+    // End the refreshing
+    if (self.refreshControl) {
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
+                                                                    forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+        self.refreshControl.attributedTitle = attributedTitle;
+        
+        [self.refreshControl endRefreshing];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

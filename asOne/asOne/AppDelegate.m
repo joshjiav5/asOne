@@ -82,6 +82,8 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+    NSLog([userInfo objectForKey:@"title"]);
+    NSLog(@"We can pass user information to the UI!");
 }
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {

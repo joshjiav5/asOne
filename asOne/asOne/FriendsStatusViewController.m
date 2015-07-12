@@ -56,6 +56,14 @@
     return 10;
 }
 
+- (IBAction)touchPlusBtn:(UIButton *)sender {
+
+}
+
+- (IBAction)touchChatBtn:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"sendChat" sender:nil];
+}
+
 /*
 #pragma mark - Navigation
 

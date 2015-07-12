@@ -14,7 +14,9 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
+
 @interface AppDelegate ()
+
 
 @end
 
@@ -44,6 +46,12 @@
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
     NSLog(@"Launched in background %d", UIApplicationStateBackground == application.applicationState);
+    if([[AVAudioSession sharedInstance] respondsToSelector:@selector(requestRecordPermission:)])
+    {
+        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+            NSLog(@"permission : %d", granted);
+        }];
+    }
     //can also run code here?
     [FBSDKLoginButton class];
     return YES;
@@ -90,6 +98,9 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.s
+    NSLog(@"Application entered background!");
+    //Perhaps startRecording at this point for testing purposes?
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

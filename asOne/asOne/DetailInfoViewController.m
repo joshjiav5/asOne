@@ -11,11 +11,13 @@
 #import "ActionItemTableViewCell.h"
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
+#import <AVFoundation/AVFoundation.h>
+#import <CoreAudio/CoreAudioTypes.h>
 
 @interface DetailInfoViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *actionTableView;
 @property (strong, nonatomic) NSArray *actionItems;
-
+@property (nonatomic, strong) AVAudioRecorder *recorder;
 @end
 
 @implementation DetailInfoViewController
@@ -125,7 +127,47 @@
 }
 
 - (void)recordAction {
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    NSError *err = nil;
+    [audioSession setCategory :AVAudioSessionCategoryPlayAndRecord error:&err];
     
+    if(err){
+        NSLog(@"audioSession: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
+        return;
+    }
+    [audioSession setActive:YES error:&err];
+    err = nil;
+    if(err){
+        NSLog(@"audioSession: %@ %d %@", [err domain], [err code], [[err userInfo] description]);
+        return;
+    }
+    NSString *urlString = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    
+    NSURL *url = [NSURL URLWithString:[urlString stringByAppendingString:@"/test.caf"]];
+    
+    NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
+                              [NSNumber numberWithFloat: 44100.0],                 AVSampleRateKey,
+                              [NSNumber numberWithInt: kAudioFormatAppleLossless], AVFormatIDKey,
+                              [NSNumber numberWithInt: 2],                         AVNumberOfChannelsKey,
+                              [NSNumber numberWithInt: AVAudioQualityMax],         AVEncoderAudioQualityKey,
+                              nil];
+    
+    NSError *error;
+    
+    self.recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryRecord error:NULL];
+    if (self.recorder) {
+        [self.recorder setDelegate:self];
+        [self.recorder prepareToRecord];
+        self.recorder.meteringEnabled = YES;
+    } else
+        NSLog([error description]);
+    if(audioSession.inputAvailable) {
+        [self.recorder recordForDuration:(NSTimeInterval)15];
+        NSLog(@"Recording!");
+    } else {
+        NSLog(@"Input is not available...");
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
